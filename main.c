@@ -1,45 +1,58 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
+bool findUser(char *username, char *input){
+    char *copy = strdup(input);
+    if (copy == NULL) {
+        exit(1);
+    }
 
-void parseGrades(char *username, char *input){
-    int userFound = 0;
-
-    char *token = strtok(input, ":");
+    char *token = strtok(copy, ":");
     while (token != NULL) {
-        if(!userFound && strcmp(token, username) == 0) {
-            userFound = 1;
-        }
-
-        if(userFound){
-          printf("%s\n", token);
+        if(strcmp(token, username) == 0) {
+          free(copy);
+          return true;
         }
 
         token = strtok(NULL, ":");
     }
-}
+
+    free(copy);
+    return false;
+  }
 
 // Takes username as input
 // Reads users grades from grades.txt
 void retrieveGrades(char *username){
   FILE *fp;
-  char output[2035];
+  char gradesLine[100];
 
-  char shell[] = "/bin/sh -c";
+  char shell[] = "/bin/sh";
   char command[] = "cat";
   char fileNameGrades[] = "grades.txt";
 
   char finalCommand[40];
-  sprintf(finalCommand, "%s \"%s %s \"", shell, command, fileNameGrades);
+  sprintf(finalCommand, "%s -c \"%s %s\"", shell, command, fileNameGrades);
   fp = popen(finalCommand, "r");
   if (fp == NULL) {
     printf("Failed to run command\n" );
     exit(1);
   }
 
-  while(fgets(output, sizeof(output), fp) != NULL) {
-    parseGrades(username, output);
+  bool userFound = false;
+  while(!userFound && fgets(gradesLine, sizeof(gradesLine), fp) != NULL) {
+    if(!findUser(username, gradesLine)) {
+      continue;         
+    }
+  
+    printf("%s\n", gradesLine);
+    userFound = true;
+  }
+
+  if(!userFound) {
+    printf("Username: %s not found!", username);
   }
 
   pclose(fp);
