@@ -39,7 +39,7 @@ int main(int argc, char* argv[]) {
   char username[20];
   scanf("%s", username);
 
-  printf("Let's find your grades %s!", username);
+  printf("Let's find your grades %s!\n", username);
 
   retrieveGrades(username);
   return 0;
