@@ -3,6 +3,24 @@
 #include <stdlib.h>
 #include <string.h>
 
+void printGrades(char *username, char *input) {
+  char *copy = strdup(input);
+  if (copy == NULL) {
+    exit(1);
+  }
+
+  char dest[40] = {0};
+  strcpy(dest, copy + strlen(username) + 1);
+
+  char *token = strtok(dest, ";");
+  while (token != NULL) {
+    printf("\t%s\n", token);
+    token = strtok(NULL, ";");
+  }
+
+  free(copy);
+}
+
 bool findUser(char *username, char *input) {
   char *copy = strdup(input);
   if (copy == NULL) {
@@ -47,12 +65,12 @@ void retrieveGrades(char *username) {
       continue;
     }
 
-    printf("%s\n", gradesLine);
+    printGrades(username, gradesLine);
     userFound = true;
   }
 
   if (!userFound) {
-    printf("Username: %s not found!", username);
+    printf("Username: %s not found!\n", username);
   }
 
   pclose(fp);
@@ -66,7 +84,7 @@ int main(int argc, char *argv[]) {
   printf("                                                 \n");
   printf("(C) 2025                                         \n");
 
-  printf("This program returns the grades for the specified user.\n");
+  printf("This program returns the grades for the specified user.\nUsername: ");
 
   char username[20];
   scanf("%s", username);
