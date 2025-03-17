@@ -12,8 +12,11 @@ that is only hackable using ROP as a technique.
 
 ## Building and executing
 
+* Disable stack canary `-fno-stack-protector`
+* Make stack executable `-z execstack`
+
 ```sh
-gcc main.c && ./a.out
+gcc main.c -o aaugrader -fno-stack-protector -z execstack && ./aaugrader
 ```
 
 ## Todo
