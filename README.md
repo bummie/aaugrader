@@ -21,4 +21,23 @@ gcc main.c -o aaugrader -fno-stack-protector -z execstack && ./aaugrader
 
 ## Todo
 [ ] Make a docker container
-[ ] Read file content using `/bin/sh` so it can be used with ROP
+[X] Read file content using `/bin/sh` so it can be used with ROP
+
+## Format
+
+grades.txt file format
+
+Usernames and grades seperated with a colon.
+Grades seperated with a semicolon.
+```
+<username>:grade;grade;grade;grade
+```
+
+### Example
+```
+vfrank21:12;12;12;12;12
+slaza24:12;12;12;12;12
+lsfr21:12;12;12;12;12
+magdan21:12;12;12;12;12
+sberge24:02;02;04;07;12
+```
