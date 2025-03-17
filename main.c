@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
 
   printf("This program returns the grades for the specified user.\nUsername: ");
 
-  char username[20];
+  char username[80];
   scanf("%s", username);
 
   printf("Let's find your grades %s!\n", username);
