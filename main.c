@@ -3,6 +3,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+char *getUsername() {
+  printf("Username: ");
+  char username[80];
+  scanf("%s", username);
+
+  char *wordd = malloc(strlen(username) + 1);
+  strncpy(wordd, username, strlen(username) + 1);
+  
+  return wordd;
+}
+
 void printGrades(char *username, char *input) {
   char *copy = strdup(input);
   if (copy == NULL) {
@@ -84,11 +95,9 @@ int main(int argc, char *argv[]) {
   printf("                                                 \n");
   printf("(C) 2025                                         \n");
 
-  printf("This program returns the grades for the specified user.\nUsername: ");
+  printf("This program returns the grades for the specified user.\n");
 
-  char username[80];
-  scanf("%s", username);
-
+  char *username = getUsername();
   printf("Let's find your grades %s!\n", username);
 
   retrieveGrades(username);
