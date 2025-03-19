@@ -15,6 +15,16 @@ that is only hackable using ROP as a technique.
 * Disable stack canary `-fno-stack-protector`
 * Make stack executable `-z execstack`
 
+### Makefile
+
+```sh
+make all # builds both stack executable and only roppable binary
+make pwn # builds only stack executable binary
+make pwn_rop # builds only non stack exectuable binary, has to ROP
+make clean # removes binary builds
+````
+
+### Manually
 ```sh
 gcc main.c -m32 -o aaugrader -fno-stack-protector -z execstack && ./aaugrader
 ```
