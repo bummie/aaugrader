@@ -16,7 +16,7 @@ that is only hackable using ROP as a technique.
 * Make stack executable `-z execstack`
 
 ```sh
-gcc main.c -o aaugrader -fno-stack-protector -z execstack && ./aaugrader
+gcc main.c -m32 -o aaugrader -fno-stack-protector -z execstack && ./aaugrader
 ```
 
 ## Todo
