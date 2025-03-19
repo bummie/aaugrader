@@ -29,6 +29,41 @@ make clean # removes binary builds
 gcc main.c -m32 -o aaugrader -fno-stack-protector -z execstack && ./aaugrader
 ```
 
+## Docker
+Stolen template from https://github.com/osirislab/CSAW-CTF-2019-Finals/blob/master/pwn/defile/
+### Build
+```sh
+docker build . -t aaugrader
+```
+
+### Run
+```sh
+docker run -p 8000:8000 --rm --name=aaugrader -d -it aaugrader
+```
+
+### Stop
+```sh
+docker stop aaugrader
+```
+
+### Connec to container
+```sh
+nc localhost 8000                                                                                                           11:27:27
+ ▗▄▖  ▗▄▖ ▗▖ ▗▖    ▗▄▄▖▗▄▄▖  ▗▄▖ ▗▄▄▄  ▗▄▄▄▖▗▄▄▖ 
+▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌   ▐▌   ▐▌ ▐▌▐▌ ▐▌▐▌  █ ▐▌   ▐▌ ▐▌
+▐▛▀▜▌▐▛▀▜▌▐▌ ▐▌   ▐▌▝▜▌▐▛▀▚▖▐▛▀▜▌▐▌  █ ▐▛▀▀▘▐▛▀▚▖
+▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘   ▝▚▄▞▘▐▌ ▐▌▐▌ ▐▌▐▙▄▄▀ ▐▙▄▄▖▐▌ ▐▌
+                                                 
+(C) 2025                                         
+This program returns the grades for the specified user.
+Username: sberge24
+	02
+	02
+	04
+	07
+	12
+```
+
 ## Todo
 [ ] Make a docker container
 [X] Read file content using `/bin/sh` so it can be used with ROP

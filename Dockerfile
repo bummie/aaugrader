@@ -1,0 +1,21 @@
+FROM ubuntu:24.04
+
+RUN dpkg --add-architecture i386
+
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y socat libstdc++6:i386 libc6
+
+RUN useradd -ms /bin/sh jens
+
+WORKDIR /home/jens
+
+COPY ./grades.txt ./
+COPY ./aaugrader ./
+RUN chown -R root:jens /home/jens && \
+    chmod 750 /home/jens && \
+    chown root:jens /home/jens/grades.txt && \
+    chmod 440 /home/jens/grades.txt
+
+EXPOSE 8000
+
+CMD ["socat", "-T60", "TCP-LISTEN:8000,reuseaddr,fork,su=jens", "EXEC:/home/jens/aaugrader,stderr"]
