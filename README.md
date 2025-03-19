@@ -46,6 +46,12 @@ docker run -p 8000:8000 --rm --name=aaugrader -d -it aaugrader
 docker stop aaugrader
 ```
 
+### Enter container to debug
+```sh
+docker exec -it aaugrader bash
+```
+
+
 ### Connec to container
 ```sh
 nc localhost 8000                                                                                                           11:27:27
