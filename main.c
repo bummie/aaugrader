@@ -4,16 +4,21 @@
 #include <string.h>
 
 char *getUsername() {
-  printf("Username: ");
+  // Very weird code to make it easier to exploit.
   char username[80];
   scanf("%s", username);
 
-  char *wordd = malloc(strlen(username) + 1);
-  strncpy(wordd, username, strlen(username) + 1);
+  if(strlen(username) > 10) {
+    printf("Username is too long!\n");
+    return "bad_username";
+  }
   
-  return wordd;
+  char *heapUserame = malloc(10);
+  strncpy(heapUserame, username, strlen(username) + 1);
+  return heapUserame;
 }
 
+// output the grades for specified user
 void printGrades(char *username, char *input) {
   char *copy = strdup(input);
   if (copy == NULL) {
@@ -32,6 +37,7 @@ void printGrades(char *username, char *input) {
   free(copy);
 }
 
+// look for specified username in input
 bool findUser(char *username, char *input) {
   char *copy = strdup(input);
   if (copy == NULL) {
@@ -95,10 +101,9 @@ int main(int argc, char *argv[]) {
   printf("                                                 \n");
   printf("(C) 2025                                         \n");
 
-  printf("This program returns the grades for the specified user.\n");
-
+  printf("This program returns the grades for the specified user.\nUsername: ");
+  
   char *username = getUsername();
-  printf("Let's find your grades %s!\n", username);
 
   retrieveGrades(username);
   return 0;
