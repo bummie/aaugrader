@@ -11,6 +11,8 @@ WORKDIR /home/jens
 
 COPY ./grades.txt ./
 COPY ./aaugrader ./
+COPY ./src/run.sh ./
+
 RUN chown -R root:jens /home/jens && \
     chmod 750 /home/jens && \
     chown root:jens /home/jens/grades.txt && \
@@ -18,4 +20,4 @@ RUN chown -R root:jens /home/jens && \
 
 EXPOSE 8000
 
-CMD ["socat", "-T60", "TCP-LISTEN:8000,reuseaddr,fork,su=jens", "EXEC:/home/jens/aaugrader,stderr"]
+CMD ["./run.sh"]
