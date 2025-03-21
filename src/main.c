@@ -4,11 +4,14 @@
 #include <string.h>
 
 char *getUsername() {
+
+  printf("Username: "); 
   // Very weird code to make it easier to exploit.
   char username[80];
   scanf("%s", username);
-
+  
   if(strlen(username) > 10) {
+    printf(username);
     printf("Username is too long!\n");
     return "bad_username";
   }
@@ -105,8 +108,7 @@ int main(int argc, char *argv[]) {
   printf("                                                 \n");
   printf("(C) 2025                                         \n");
 
-  printf("This program returns the grades for the specified user.\nUsername: ");
-  
+  printf("This program returns the grades for the specified user.\n");
   char *username = getUsername();
 
   retrieveGrades(username);
