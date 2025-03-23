@@ -5,20 +5,24 @@
 
 char *getUsername() {
 
-  printf("Username: "); 
+  printf("Semester: "); 
+  char semester[10];
+  scanf("%s", semester);
+  printf(semester);
+  
+  printf("\nUsername: "); 
   // Very weird code to make it easier to exploit.
   char username[80];
   scanf("%s", username);
-  
+
   if(strlen(username) > 10) {
-    printf(username);
     printf("Username is too long!\n");
     return "bad_username";
   }
   
-  char *heapUserame = malloc(10);
-  strncpy(heapUserame, username, strlen(username) + 1);
-  return heapUserame;
+  char *heapUsername = malloc(10);
+  strncpy(heapUsername, username, strlen(username) + 1);
+  return heapUsername;
 }
 
 // output the grades for specified user
