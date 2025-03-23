@@ -51,10 +51,15 @@ docker stop aaugrader
 docker exec -it aaugrader bash
 ```
 
+### Connect to container
 
-### Connec to container
+#### Remote
 ```sh
-nc localhost 8000                                                                                                           11:27:27
+nc aaugrader.bevster.net 8000
+```
+#### Local
+```sh
+nc localhost 8000
  ▗▄▖  ▗▄▖ ▗▖ ▗▖    ▗▄▄▖▗▄▄▖  ▗▄▖ ▗▄▄▄  ▗▄▄▄▖▗▄▄▖ 
 ▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌   ▐▌   ▐▌ ▐▌▐▌ ▐▌▐▌  █ ▐▌   ▐▌ ▐▌
 ▐▛▀▜▌▐▛▀▜▌▐▌ ▐▌   ▐▌▝▜▌▐▛▀▚▖▐▛▀▜▌▐▌  █ ▐▛▀▀▘▐▛▀▚▖
@@ -71,8 +76,8 @@ Username: sberge24
 ```
 
 ## Todo
-[ ] Make a docker container
-[X] Read file content using `/bin/sh` so it can be used with ROP
+- [X] Make a docker container
+- [X] Read file content using `/bin/sh` so it can be used with ROP
 
 ## Format
 
