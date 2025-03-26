@@ -13,9 +13,9 @@ COPY ./grades.txt ./
 COPY ./aaugrader ./
 COPY ./src/run.sh ./
 
-RUN chown -R root:jens /home/jens && \
+RUN chown -R jens:jens /home/jens && \
     chmod 750 /home/jens && \
-    chown root:jens /home/jens/grades.txt && \
+    chown jens:jens /home/jens/grades.txt && \
     chmod 660 /home/jens/grades.txt
 
 EXPOSE 8000
