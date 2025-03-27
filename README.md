@@ -118,7 +118,8 @@ run.sh
 $ id
 uid=1001(jens) gid=1001(jens) groups=1001(jens)
 ```
-
+### Replace a line in file
+`sed -i 's/sberge24:02;02;04;07;12/sberge24:12;12;12;12;12/' grades.txt`
 
 ### Help
 ```sh
