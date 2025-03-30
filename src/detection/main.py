@@ -6,12 +6,13 @@ import sys
 
 
 class Syscall:
-    def __init__(self, pid: int, syscall: str, args: list[str], result: int):
+    def __init__(self, pid: int, syscall: str, args: list[str], result: int, raw: str):
         self.pid = pid
         self.syscall = syscall
         self.args = args
         self.result = result
-
+        self.raw = raw
+        
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
 
@@ -49,12 +50,12 @@ def parse_strace_output(input_line: str) -> Syscall:
         args = matches[0][1].split(", ")
         result = matches[0][2]
 
-        return Syscall(pid, syscall, args, result)
+        return Syscall(pid, syscall, args, result, input_line)
 
     elif len(matches[0]) == 2:
         syscall = matches[0][0]
         result = matches[0][1]
-        return Syscall(pid, syscall, [], result)
+        return Syscall(pid, syscall, [], result, input_line)
     else:
         raise ValueError(f"failed parsing regex matches {matches}")
 
