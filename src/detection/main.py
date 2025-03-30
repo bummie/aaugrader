@@ -37,7 +37,10 @@ def parse_strace_output(input_line: str) -> Syscall:
 
     if input_line.lower().startswith("[pid"):
         pid = input_line.split("[pid ")[1].split("]")[0]
-        matches = regex_match_syscall(input_line.split("]")[1])
+        strace_output_no_pid = "".join(input_line.split("]")[1:])
+        matches = regex_match_syscall(strace_output_no_pid)
+    elif input_line.lower().startswith("<..."):
+        raise ValueError(f"unwanted line: {input_line}")
     else:
         matches = regex_match_syscall(input_line)
 
