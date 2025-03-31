@@ -4,6 +4,9 @@ import json
 import re
 import sys
 
+import rustworkx as rx
+from rustworkx.visualization import graphviz_draw
+
 
 class Syscall:
     def __init__(self, pid: int, syscall: str, args: list[str], result: int, raw: str):
@@ -12,7 +15,7 @@ class Syscall:
         self.args = args
         self.result = result
         self.raw = raw
-        
+
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
 
@@ -63,9 +66,26 @@ def parse_strace_output(input_line: str) -> Syscall:
         raise ValueError(f"failed parsing regex matches {matches}")
 
 
-for line in sys.stdin:
-    try:
-        syscall = parse_strace_output(line)
-        print(syscall.to_json())
-    except Exception as err:
-        print(f"Rip failed parsing line: {err}\n{line}", file=sys.stderr)
+def node_attr(node):
+    if node.pid == -1:
+        return { "color": "red", "label": node.syscall }
+    else:
+        return { "color": "green", "label": node.syscall }
+
+if __name__ == "__main__":
+    graph = rx.PyDiGraph()
+
+    prev_node = None
+    for line in sys.stdin:
+        try:
+            syscall = parse_strace_output(line)
+            node_index = graph.add_node(syscall)
+            if prev_node is not None:
+                graph.add_edge(prev_node, node_index, None)
+            prev_node = node_index
+            print(syscall.to_json())
+        except Exception as err:
+            print(f"failed parsing line: {err}\n{line}", file=sys.stderr)
+
+#   print(graph.edge_indices())
+    graphviz_draw(graph, node_attr_fn=node_attr, filename="/tmp/test.png", method="dot")
