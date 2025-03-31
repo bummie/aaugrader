@@ -67,26 +67,48 @@ def parse_strace_output(input_line: str) -> Syscall:
 
 
 def int_to_color_str(index: int) -> str:
-    colors = ["gold", "lightskyblue", "lightsalmon", "lightgreen", "lightcoral", "lightcoral"]
-    return colors[ index % len(colors)]
-    
+    colors = [
+        "gold",
+        "lightskyblue",
+        "lightsalmon",
+        "lightgreen",
+        "lightcoral",
+        "lightcoral",
+    ]
+    return colors[index % len(colors)]
+
+
 def node_attr(node: Syscall) -> str:
-    return { "color": int_to_color_str(node.pid), "label": node.syscall }
+    return {"color": int_to_color_str(node.pid), "label": node.syscall}
 
-if __name__ == "__main__":
+
+def build_graph() -> rx.PyDiGraph:
     graph = rx.PyDiGraph()
-
+    prev_pid_nodes = {}
     prev_node = None
+
     for line in sys.stdin:
+        syscall = None
         try:
             syscall = parse_strace_output(line)
-            node_index = graph.add_node(syscall)
-            if prev_node is not None:
-                graph.add_edge(prev_node, node_index, None)
-            prev_node = node_index
             print(syscall.to_json())
         except Exception as err:
             print(f"failed parsing line: {err}\n{line}", file=sys.stderr)
+            continue
 
-#   print(graph.edge_indices())
+        node_index = graph.add_node(syscall)
+        if syscall.pid in prev_pid_nodes:
+            graph.add_edge(prev_pid_nodes[syscall.pid], node_index, None)
+        elif prev_node is not None:
+            graph.add_edge(prev_node, node_index, None)
+
+        prev_pid_nodes[syscall.pid] = node_index
+        prev_node = node_index
+
+    return graph
+
+
+if __name__ == "__main__":
+    graph = build_graph()
+    print(graph.edge_indices())
     graphviz_draw(graph, node_attr_fn=node_attr, filename="/tmp/test.png", method="dot")
