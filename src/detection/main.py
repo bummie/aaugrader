@@ -9,7 +9,7 @@ from rustworkx.visualization import graphviz_draw
 
 
 class Syscall:
-    def __init__(self, pid: int, syscall: str, args: list[str], result: int, raw: str):
+    def __init__(self, pid: int, syscall: str, args: list[str], result: str, raw: str):
         self.pid = pid
         self.syscall = syscall
         self.args = args
@@ -39,7 +39,7 @@ def parse_strace_output(input_line: str) -> Syscall:
     matches = None
 
     if input_line.lower().startswith("[pid"):
-        pid = input_line.split("[pid ")[1].split("]")[0]
+        pid = int(input_line.split("[pid ")[1].split("]")[0])
         strace_output_no_pid = "".join(input_line.split("]")[1:])
         matches = regex_match_syscall(strace_output_no_pid)
     elif input_line.lower().startswith("<..."):
@@ -66,11 +66,12 @@ def parse_strace_output(input_line: str) -> Syscall:
         raise ValueError(f"failed parsing regex matches {matches}")
 
 
-def node_attr(node):
-    if node.pid == -1:
-        return { "color": "red", "label": node.syscall }
-    else:
-        return { "color": "green", "label": node.syscall }
+def int_to_color_str(index: int) -> str:
+    colors = ["gold", "lightskyblue", "lightsalmon", "lightgreen", "lightcoral", "lightcoral"]
+    return colors[ index % len(colors)]
+    
+def node_attr(node: Syscall) -> str:
+    return { "color": int_to_color_str(node.pid), "label": node.syscall }
 
 if __name__ == "__main__":
     graph = rx.PyDiGraph()
