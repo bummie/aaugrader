@@ -3,6 +3,7 @@ import argparse
 import sys
 
 import syscallparser as sp
+import syscallgrouper as sg
 
 
 def parse_stdin_to_syscalls() -> list[sp.Syscall]:
@@ -29,3 +30,6 @@ if __name__ == "__main__":
 
     syscalls: list[sp.Syscall] = parse_stdin_to_syscalls()
     sp.syscalls_to_jsonl(syscalls, f"/tmp/{args.output}.jsonl")
+
+    syscallsgrouped = sg.group_syscalls(syscalls)
+    print(syscallsgrouped.to_json())
