@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import argparse
 import json
 import re
 import sys
@@ -82,19 +82,28 @@ def node_attr(node: Syscall) -> str:
     return {"color": int_to_color_str(node.pid), "label": node.syscall}
 
 
-def build_graph() -> rx.PyDiGraph:
-    graph = rx.PyDiGraph()
-    prev_pid_nodes = {}
-    prev_node = None
+def parse_stdin_to_syscalls() -> list[Syscall]:
+    syscalls: list[Syscall] = []
 
     for line in sys.stdin:
         syscall = None
         try:
             syscall = parse_strace_output(line)
-            print(syscall.to_json())
+            syscalls.append(syscall)
         except Exception as err:
             print(f"failed parsing line: {err}\n{line}", file=sys.stderr)
             continue
+
+    return syscalls
+
+
+def build_graph(syscalls: list[Syscall]) -> rx.PyDiGraph:
+    graph = rx.PyDiGraph()
+    prev_pid_nodes = {}
+    prev_node = None
+
+    for syscall in syscalls:
+        print(syscall.to_json())
 
         node_index = graph.add_node(syscall)
         if syscall.pid in prev_pid_nodes:
@@ -109,6 +118,16 @@ def build_graph() -> rx.PyDiGraph:
 
 
 if __name__ == "__main__":
-    graph = build_graph()
-    print(graph.edge_indices())
-    graphviz_draw(graph, node_attr_fn=node_attr, filename="/tmp/test.png", method="dot")
+    parser = argparse.ArgumentParser(description="Detection graph builder 1337")
+    parser.add_argument(
+        "-o", "--output", type=str, help="Name for output image and json graph"
+    )
+    args = parser.parse_args()
+
+    syscalls: list[Syscall] = parse_stdin_to_syscalls()
+
+    graph = build_graph(syscalls)
+    rx.digraph_node_link_json(graph, path=f"/tmp/{args.output}.json")
+    graphviz_draw(
+        graph, node_attr_fn=node_attr, filename=f"/tmp/{args.output}.png", method="dot"
+    )
