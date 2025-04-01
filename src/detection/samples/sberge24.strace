@@ -1,0 +1,387 @@
+execve("./aaugrader", ["./aaugrader"], ["USER=bummie", "fish_pager_color_description=6272a4", "fish_color_selection=--background=44475a", "XAUTHORITY=/home/bummie/.Xauthority", "fish_color_redirection=f8f8f2", "OMF_PATH=/home/bummie/.local/share/omf", "fish_pager_color_completion=f8f8f2", "XDG_SESSION_DESKTOP=i3", "fish_color_host_remote=bd93f9", "LOGNAME=bummie", "fish_pager_color_secondary_completion=f8f8f2", "fish_color_option=ffb86c", "LC_TELEPHONE=en_GB.UTF-8", "PWD=/home/bummie/projects/AAUGrader", "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0", "fish_color_param=bd93f9", "EDITOR=helix", "GDMSESSION=i3", "fish_color_quote=f1fa8c", "DISPLAY=:0", "BROWSER=firefox", "XDG_SESSION_CLASS=user", "fish_pager_color_prefix=8be9fd", "DESKTOP_SESSION=i3", "XDG_SEAT=seat0", "theme_display_user=no", "fish_color_escape=ff79c6", "XDG_RUNTIME_DIR=/run/user/1000", "PATH=/home/bummie/.cargo/bin:/home/bummie/.local/bin:/home/bummie/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl", "fish_color_comment=6272a4", "LC_NUMERIC=en_GB.UTF-8", "LC_NAME=en_GB.UTF-8", "GTK3_MODULES=xapp-gtk3-module", "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus", "fish_pager_color_background=", "LC_MEASUREMENT=en_GB.UTF-8", "LC_IDENTIFICATION=en_GB.UTF-8", "I3SOCK=/run/user/1000/i3/ipc-socket.1308", "LC_TIME=en_GB.UTF-8", "theme_title_display_user=no", "fish_color_cancel=ff5555 --reverse", "GTK_MODULES=canberra-gtk-module", "MAIL=/var/spool/mail/bummie", "fish_pager_color_progress=6272a4", "fish_color_end=ffb86c", "DEBUGINFOD_URLS=https://debuginfod.archlinux.org ", "LC_PAPER=en_GB.UTF-8", "MOTD_SHOWN=pam", "OMF_CONFIG=/home/bummie/.config/omf", "fish_color_autosuggestion=6272a4", "fish_pager_color_selected_background=--background=44475a", "LANG=en_GB.UTF-8", "XDG_CURRENT_DESKTOP=i3", "SHELL=/usr/bin/fish", "fish_color_command=8be9fd", "fish_pager_color_selected_completion=f8f8f2", "TERM=xterm-256color", "XDG_SESSION_TYPE=x11", "TERMINAL=xfce4-terminal", "fish_pager_color_secondary_description=6272a4", "fish_color_cwd=50fa7b", "fish_color_keyword=ff79c6", "LC_MONETARY=en_GB.UTF-8", "XDG_VTNR=7", "fish_pager_color_selected_description=6272a4", "SHLVL=2", "fish_color_normal=f8f8f2", "fish_color_error=ff5555", "fish_color_operator=50fa7b", "COLORTERM=truecolor", "HOME=/home/bummie", "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/bummie", "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0", "fish_pager_color_selected_prefix=8be9fd", "VTE_VERSION=8000", "CLOJURE_HOME=/usr/share/clojure", "fish_pager_color_secondary_background=", "XDG_SESSION_ID=2", "WINDOWID=33612721", "fish_pager_color_secondary_prefix=8be9fd", "LC_ADDRESS=en_GB.UTF-8", "fish_color_host=bd93f9", "fish_color_user=8be9fd", "fish_color_search_match=--background=44475a"]) = 0
+[ Process PID=698794 runs in 32 bit mode. ]
+brk(NULL)                               = 0x5c889000
+mmap2(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xebfdb000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/etc/ld.so.cache", O_RDONLY|O_LARGEFILE|O_CLOEXEC) = 3</etc/ld.so.cache>
+statx(3</etc/ld.so.cache>, "", AT_STATX_SYNC_AS_STAT|AT_NO_AUTOMOUNT|AT_EMPTY_PATH, STATX_BASIC_STATS, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_blksize=4096, stx_attributes=0, stx_nlink=1, stx_uid=0, stx_gid=0, stx_mode=S_IFREG|0644, stx_ino=12567820, stx_size=226227, stx_blocks=448, stx_attributes_mask=STATX_ATTR_COMPRESSED|STATX_ATTR_IMMUTABLE|STATX_ATTR_APPEND|STATX_ATTR_NODUMP|STATX_ATTR_AUTOMOUNT|STATX_ATTR_MOUNT_ROOT|STATX_ATTR_DAX, stx_atime={tv_sec=1743330499, tv_nsec=603333302} /* 2025-03-30T12:28:19.603333302+0200 */, stx_btime={tv_sec=1743284010, tv_nsec=789999935} /* 2025-03-29T22:33:30.789999935+0100 */, stx_ctime={tv_sec=1743284010, tv_nsec=789999935} /* 2025-03-29T22:33:30.789999935+0100 */, stx_mtime={tv_sec=1743284010, tv_nsec=789999935} /* 2025-03-29T22:33:30.789999935+0100 */, stx_rdev_major=0, stx_rdev_minor=0, stx_dev_major=0, stx_dev_minor=35, stx_mnt_id=0x55, stx_subvol=0x100}) = 0
+mmap2(NULL, 226227, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0xebfa3000
+close(3</etc/ld.so.cache>)              = 0
+openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib32/libc.so.6", O_RDONLY|O_LARGEFILE|O_CLOEXEC) = 3</usr/lib32/libc.so.6>
+read(3</usr/lib32/libc.so.6>, "\177ELF\1\1\1\3\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\240%\2\0004\0\0\0\370\361\"\0\0\0\0\0004\0 \0\16\0(\0:\09\0\6\0\0\0004\0\0\0004\0\0\0004\0\0\0\300\1\0\0\300\1\0\0\4\0\0\0\4\0\0\0\3\0\0\0P\2\0\0P\2\0\0P\2\0\0\31\0\0\0\31\0\0\0\4\0\0\0\4\0\0\0\1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\200\350\1\0\200\350\1\0\4\0\0\0\0\20\0\0\1\0\0\0\0\360\1\0\0\360\1\0\0\360\1\0\340\n\31\0\340\n\31\0\5\0\0\0\0\20\0\0\1\0\0\0\0\0\33\0\0\0\33\0\0\0\33\0\350\244\7\0\350\244\7\0\4\0\0\0\0\20\0\0\1\0\0\0h\245\"\0h\265\"\0h\265\"\0P)\0\0Hr\0\0\6\0\0\0\0\20\0\0\2\0\0\0,\275\"\0,\315\"\0"..., 512) = 512
+statx(3</usr/lib32/libc.so.6>, "", AT_STATX_SYNC_AS_STAT|AT_NO_AUTOMOUNT|AT_EMPTY_PATH, STATX_BASIC_STATS, {stx_mask=STATX_ALL|STATX_MNT_ID|STATX_SUBVOL, stx_blksize=4096, stx_attributes=0, stx_nlink=1, stx_uid=0, stx_gid=0, stx_mode=S_IFREG|0755, stx_ino=11621817, stx_size=2292488, stx_blocks=4480, stx_attributes_mask=STATX_ATTR_COMPRESSED|STATX_ATTR_IMMUTABLE|STATX_ATTR_APPEND|STATX_ATTR_NODUMP|STATX_ATTR_AUTOMOUNT|STATX_ATTR_MOUNT_ROOT|STATX_ATTR_DAX, stx_atime={tv_sec=1740248497, tv_nsec=0} /* 2025-02-22T19:21:37+0100 */, stx_btime={tv_sec=1740248497, tv_nsec=342955661} /* 2025-02-22T19:21:37.342955661+0100 */, stx_ctime={tv_sec=1740248497, tv_nsec=349622259} /* 2025-02-22T19:21:37.349622259+0100 */, stx_mtime={tv_sec=1740040717, tv_nsec=0} /* 2025-02-20T09:38:37+0100 */, stx_rdev_major=0, stx_rdev_minor=0, stx_dev_major=0, stx_dev_minor=35, stx_mnt_id=0x55, stx_subvol=0x100}) = 0
+mmap2(NULL, 2303920, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib32/libc.so.6>, 0) = 0xebd70000
+mmap2(0xebd8f000, 1642496, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib32/libc.so.6>, 0x1f000) = 0xebd8f000
+mmap2(0xebf20000, 503808, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib32/libc.so.6>, 0x1b0000) = 0xebf20000
+mmap2(0xebf9b000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib32/libc.so.6>, 0x22a000) = 0xebf9b000
+mmap2(0xebf9e000, 18352, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xebf9e000
+close(3</usr/lib32/libc.so.6>)          = 0
+set_thread_area({entry_number=-1, base_addr=0xebfdc480, limit=0x0fffff, seg_32bit=1, contents=0, read_exec_only=0, limit_in_pages=1, seg_not_present=0, useable=1}) = 0 (entry_number=12)
+set_tid_address(0xebfdc4e8)             = 698794
+set_robust_list(0xebfdc4ec, 12)         = 0
+rseq(0xebfdc400, 0x20, 0, 0x53053053)   = 0
+mprotect(0xebf9b000, 8192, PROT_READ)   = 0
+mprotect(0x5ba33000, 4096, PROT_READ)   = 0
+mprotect(0xec018000, 8192, PROT_READ)   = 0
+ugetrlimit(RLIMIT_STACK, {rlim_cur=8192*1024, rlim_max=RLIM_INFINITY}) = 0
+munmap(0xebfa3000, 226227)              = 0
+write(1</dev/pts/5>, " \342\226\227\342\226\204\342\226\226  \342\226\227\342\226\204\342\226\226 \342\226\227\342\226\226 \342\226\227\342\226\226    \342\226\227\342\226\204\342\226\204\342\226\226\342\226\227\342\226\204\342\226\204\342\226\226  \342\226\227\342\226\204\342\226\226 \342\226\227\342\226\204\342\226\204\342\226\204  \342\226\227\342\226\204\342\226\204\342\226\204\342\226\226\342\226\227\342\226\204\342\226\204\342\226\226 ", 117) = 117
+write(1</dev/pts/5>, "\n", 1)           = 1
+write(1</dev/pts/5>, "\342\226\220\342\226\214 \342\226\220\342\226\214\342\226\220\342\226\214 \342\226\220\342\226\214\342\226\220\342\226\214 \342\226\220\342\226\214   \342\226\220\342\226\214   \342\226\220\342\226\214 \342\226\220\342\226\214\342\226\220\342\226\214 \342\226\220\342\226\214\342\226\220\342\226\214  \342\226\210 \342\226\220\342\226\214   \342\226\220\342\226\214 \342\226\220\342\226\214", 111) = 111
+write(1</dev/pts/5>, "\n", 1)           = 1
+write(1</dev/pts/5>, "\342\226\220\342\226\233\342\226\200\342\226\234\342\226\214\342\226\220\342\226\233\342\226\200\342\226\234\342\226\214\342\226\220\342\226\214 \342\226\220\342\226\214   \342\226\220\342\226\214\342\226\235\342\226\234\342\226\214\342\226\220\342\226\233\342\226\200\342\226\232\342\226\226\342\226\220\342\226\233\342\226\200\342\226\234\342\226\214\342\226\220\342\226\214  \342\226\210 \342\226\220\342\226\233\342\226\200\342\226\200\342\226\230\342\226\220\342\226\233\342\226\200\342\226\232\342\226\226", 133) = 133
+write(1</dev/pts/5>, "\n", 1)           = 1
+write(1</dev/pts/5>, "\342\226\220\342\226\214 \342\226\220\342\226\214\342\226\220\342\226\214 \342\226\220\342\226\214\342\226\235\342\226\232\342\226\204\342\226\236\342\226\230   \342\226\235\342\226\232\342\226\204\342\226\236\342\226\230\342\226\220\342\226\214 \342\226\220\342\226\214\342\226\220\342\226\214 \342\226\220\342\226\214\342\226\220\342\226\231\342\226\204\342\226\204\342\226\200 \342\226\220\342\226\231\342\226\204\342\226\204\342\226\226\342\226\220\342\226\214 \342\226\220\342\226\214", 129) = 129
+write(1</dev/pts/5>, "\n", 1)           = 1
+write(1</dev/pts/5>, "                                                 ", 49) = 49
+write(1</dev/pts/5>, "\n", 1)           = 1
+write(1</dev/pts/5>, "(C) 2025                                         ", 49) = 49
+write(1</dev/pts/5>, "\n", 1)           = 1
+write(1</dev/pts/5>, "This program returns the grades for the specified user.", 55) = 55
+write(1</dev/pts/5>, "\n", 1)           = 1
+write(1</dev/pts/5>, "Semester: ", 10)  = 10
+read(0</dev/pts/5>, "2", 1)             = 1
+read(0</dev/pts/5>, "\n", 1)            = 1
+write(1</dev/pts/5>, "2", 1)            = 1
+write(1</dev/pts/5>, "\nUsername: ", 11) = 11
+read(0</dev/pts/5>, "s", 1)             = 1
+read(0</dev/pts/5>, "b", 1)             = 1
+read(0</dev/pts/5>, "e", 1)             = 1
+read(0</dev/pts/5>, "r", 1)             = 1
+read(0</dev/pts/5>, "g", 1)             = 1
+read(0</dev/pts/5>, "e", 1)             = 1
+read(0</dev/pts/5>, "2", 1)             = 1
+read(0</dev/pts/5>, "4", 1)             = 1
+read(0</dev/pts/5>, "\n", 1)            = 1
+getrandom("\x68\xe0\x21\xaf", 4, GRND_NONBLOCK) = 4
+brk(NULL)                               = 0x5c889000
+brk(0x5c8aa000)                         = 0x5c8aa000
+brk(0x5c8ab000)                         = 0x5c8ab000
+pipe2([3<pipe:[2590041]>, 4<pipe:[2590041]>], O_CLOEXEC) = 0
+ugetrlimit(RLIMIT_NOFILE, {rlim_cur=1024, rlim_max=512*1024}) = 0
+ugetrlimit(RLIMIT_NOFILE, {rlim_cur=1024, rlim_max=512*1024}) = 0
+mmap2(NULL, 36864, PROT_READ|PROT_WRITE|PROT_EXEC, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0xebfd2000
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_VFORK|CLONE_CLEAR_SIGHAND, exit_signal=SIGCHLD, stack=0xebfd2000, stack_size=0x9000}, 88strace: Process 698878 attached
+ <unfinished ...>
+[pid 698878] rt_sigprocmask(SIG_BLOCK, NULL, ~[KILL STOP], 8) = 0
+[pid 698878] dup2(4<pipe:[2590041]>, 1</dev/pts/5>) = 1<pipe:[2590041]>
+[pid 698878] rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+[pid 698878] execve("/bin/sh", ["sh", "-c", "--", "/bin/sh -c \"cat grades.txt\""], ["USER=bummie", "fish_pager_color_description=6272a4", "fish_color_selection=--background=44475a", "XAUTHORITY=/home/bummie/.Xauthority", "fish_color_redirection=f8f8f2", "OMF_PATH=/home/bummie/.local/share/omf", "fish_pager_color_completion=f8f8f2", "XDG_SESSION_DESKTOP=i3", "fish_color_host_remote=bd93f9", "LOGNAME=bummie", "fish_pager_color_secondary_completion=f8f8f2", "fish_color_option=ffb86c", "LC_TELEPHONE=en_GB.UTF-8", "PWD=/home/bummie/projects/AAUGrader", "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0", "fish_color_param=bd93f9", "EDITOR=helix", "GDMSESSION=i3", "fish_color_quote=f1fa8c", "DISPLAY=:0", "BROWSER=firefox", "XDG_SESSION_CLASS=user", "fish_pager_color_prefix=8be9fd", "DESKTOP_SESSION=i3", "XDG_SEAT=seat0", "theme_display_user=no", "fish_color_escape=ff79c6", "XDG_RUNTIME_DIR=/run/user/1000", "PATH=/home/bummie/.cargo/bin:/home/bummie/.local/bin:/home/bummie/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl", "fish_color_comment=6272a4", "LC_NUMERIC=en_GB.UTF-8", "LC_NAME=en_GB.UTF-8", "GTK3_MODULES=xapp-gtk3-module", "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus", "fish_pager_color_background=", "LC_MEASUREMENT=en_GB.UTF-8", "LC_IDENTIFICATION=en_GB.UTF-8", "I3SOCK=/run/user/1000/i3/ipc-socket.1308", "LC_TIME=en_GB.UTF-8", "theme_title_display_user=no", "fish_color_cancel=ff5555 --reverse", "GTK_MODULES=canberra-gtk-module", "MAIL=/var/spool/mail/bummie", "fish_pager_color_progress=6272a4", "fish_color_end=ffb86c", "DEBUGINFOD_URLS=https://debuginfod.archlinux.org ", "LC_PAPER=en_GB.UTF-8", "MOTD_SHOWN=pam", "OMF_CONFIG=/home/bummie/.config/omf", "fish_color_autosuggestion=6272a4", "fish_pager_color_selected_background=--background=44475a", "LANG=en_GB.UTF-8", "XDG_CURRENT_DESKTOP=i3", "SHELL=/usr/bin/fish", "fish_color_command=8be9fd", "fish_pager_color_selected_completion=f8f8f2", "TERM=xterm-256color", "XDG_SESSION_TYPE=x11", "TERMINAL=xfce4-terminal", "fish_pager_color_secondary_description=6272a4", "fish_color_cwd=50fa7b", "fish_color_keyword=ff79c6", "LC_MONETARY=en_GB.UTF-8", "XDG_VTNR=7", "fish_pager_color_selected_description=6272a4", "SHLVL=2", "fish_color_normal=f8f8f2", "fish_color_error=ff5555", "fish_color_operator=50fa7b", "COLORTERM=truecolor", "HOME=/home/bummie", "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/bummie", "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0", "fish_pager_color_selected_prefix=8be9fd", "VTE_VERSION=8000", "CLOJURE_HOME=/usr/share/clojure", "fish_pager_color_secondary_background=", "XDG_SESSION_ID=2", "WINDOWID=33612721", "fish_pager_color_secondary_prefix=8be9fd", "LC_ADDRESS=en_GB.UTF-8", "fish_color_host=bd93f9", "fish_color_user=8be9fd", "fish_color_search_match=--background=44475a"] <unfinished ...>
+[pid 698794] <... clone3 resumed>)      = 698878
+[pid 698794] munmap(0xebfd2000, 36864)  = 0
+[pid 698794] rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+[pid 698794] close(4<pipe:[2590041]> <unfinished ...>
+[pid 698878] <... execve resumed>)      = 0
+[pid 698794] <... close resumed>)       = 0
+[pid 698794] fcntl64(3<pipe:[2590041]>, F_SETFD, 0) = 0
+[pid 698878] [ Process PID=698878 runs in 64 bit mode. ]
+[pid 698878] brk(NULL <unfinished ...>
+[pid 698794] statx(3<pipe:[2590041]>, "", AT_STATX_SYNC_AS_STAT|AT_NO_AUTOMOUNT|AT_EMPTY_PATH, STATX_BASIC_STATS,  <unfinished ...>
+[pid 698878] <... brk resumed>)         = 0x5f6dbc428000
+[pid 698794] <... statx resumed>{stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_blksize=4096, stx_attributes=0, stx_nlink=1, stx_uid=1000, stx_gid=1000, stx_mode=S_IFIFO|0600, stx_ino=2590041, stx_size=0, stx_blocks=0, stx_attributes_mask=STATX_ATTR_AUTOMOUNT|STATX_ATTR_MOUNT_ROOT|STATX_ATTR_DAX, stx_atime={tv_sec=1743514859, tv_nsec=545633860} /* 2025-04-01T15:40:59.545633860+0200 */, stx_ctime={tv_sec=1743514859, tv_nsec=545633860} /* 2025-04-01T15:40:59.545633860+0200 */, stx_mtime={tv_sec=1743514859, tv_nsec=545633860} /* 2025-04-01T15:40:59.545633860+0200 */, stx_rdev_major=0, stx_rdev_minor=0, stx_dev_major=0, stx_dev_minor=15, stx_mnt_id=0x10}) = 0
+[pid 698794] read(3<pipe:[2590041]>,  <unfinished ...>
+[pid 698878] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache>
+[pid 698878] fstat(3</etc/ld.so.cache>, {st_dev=makedev(0, 0x23), st_ino=12567820, st_mode=S_IFREG|0644, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=448, st_size=226227, st_atime=1743330499 /* 2025-03-30T12:28:19.603333302+0200 */, st_atime_nsec=603333302, st_mtime=1743284010 /* 2025-03-29T22:33:30.789999935+0100 */, st_mtime_nsec=789999935, st_ctime=1743284010 /* 2025-03-29T22:33:30.789999935+0100 */, st_ctime_nsec=789999935}) = 0
+[pid 698878] mmap(NULL, 226227, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0x7d4321ae9000
+[pid 698878] close(3</etc/ld.so.cache>) = 0
+[pid 698878] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7d4321ae7000
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/libreadline.so.8", O_RDONLY|O_CLOEXEC) = 3</usr/lib/libreadline.so.8.2>
+[pid 698878] read(3</usr/lib/libreadline.so.8.2>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\2305\5\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\32\0\31\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\260H\1\0\0\0\0\0\260H\1\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0P\1\0\0\0\0\0\0P\1\0\0\0\0\0\0P\1\0\0\0\0\0\221\335\2\0\0\0\0\0\221\335\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0000\4\0\0\0\0\0\0000\4\0\0\0\0\0\0000\4\0\0\0\0\0\10\205\0\0\0\0\0\0\10\205\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\6\0\0\0\20\266\4\0\0\0\0\0\20\306\4\0\0\0\0\0"..., 832) = 832
+[pid 698878] fstat(3</usr/lib/libreadline.so.8.2>, {st_dev=makedev(0, 0x23), st_ino=3741716, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=672, st_size=343064, st_atime=1743284008 /* 2025-03-29T22:33:28.813333298+0100 */, st_atime_nsec=813333298, st_mtime=1722665881 /* 2024-08-03T08:18:01+0200 */, st_mtime_nsec=0, st_ctime=1723569915 /* 2024-08-13T19:25:15.605811033+0200 */, st_ctime_nsec=605811033}) = 0
+[pid 698878] mmap(NULL, 350904, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib/libreadline.so.8.2>, 0) = 0x7d4321a91000
+[pid 698878] mmap(0x7d4321aa6000, 188416, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libreadline.so.8.2>, 0x15000) = 0x7d4321aa6000
+[pid 698878] mmap(0x7d4321ad4000, 36864, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libreadline.so.8.2>, 0x43000) = 0x7d4321ad4000
+[pid 698878] mmap(0x7d4321add000, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libreadline.so.8.2>, 0x4b000) = 0x7d4321add000
+[pid 698878] mmap(0x7d4321ae6000, 2744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7d4321ae6000
+[pid 698878] close(3</usr/lib/libreadline.so.8.2>) = 0
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/libc.so.6>
+[pid 698878] read(3</usr/lib/libc.so.6>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`v\2\0\0\0\0\0@\0\0\0\0\0\0\0x\255\36\0\0\0\0\0\0\0\0\0@\08\0\17\0@\0?\0>\0\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0h3\2\0\0\0\0\0h3\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0"..., 832) = 832
+[pid 698878] pread64(3</usr/lib/libc.so.6>, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0h3\2\0\0\0\0\0h3\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\331\1\27\0\0\0\0\0\331\1\27\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0"..., 840, 64) = 840
+[pid 698878] fstat(3</usr/lib/libc.so.6>, {st_dev=makedev(0, 0x23), st_ino=11538066, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=3936, st_size=2014520, st_atime=1743284008 /* 2025-03-29T22:33:28.706666633+0100 */, st_atime_nsec=706666633, st_mtime=1740040717 /* 2025-02-20T09:38:37+0100 */, st_mtime_nsec=0, st_ctime=1740248474 /* 2025-02-22T19:21:14.243192958+0100 */, st_ctime_nsec=243192958}) = 0
+[pid 698878] pread64(3</usr/lib/libc.so.6>, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0h3\2\0\0\0\0\0h3\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\331\1\27\0\0\0\0\0\331\1\27\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0"..., 840, 64) = 840
+[pid 698878] mmap(NULL, 2038904, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0) = 0x7d432189f000
+[pid 698878] mmap(0x7d43218c3000, 1511424, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0x24000) = 0x7d43218c3000
+[pid 698878] mmap(0x7d4321a34000, 323584, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0x195000) = 0x7d4321a34000
+[pid 698878] mmap(0x7d4321a83000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0x1e3000) = 0x7d4321a83000
+[pid 698878] mmap(0x7d4321a89000, 31864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7d4321a89000
+[pid 698878] close(3</usr/lib/libc.so.6>) = 0
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/libncursesw.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/libncursesw.so.6.5>
+[pid 698878] read(3</usr/lib/libncursesw.so.6.5>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\346\6\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\33\0\32\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\314\0\0\0\0\0\0`\314\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\320\0\0\0\0\0\0\0\320\0\0\0\0\0\0\0\320\0\0\0\0\0\0\351a\4\0\0\0\0\0\351a\4\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0@\5\0\0\0\0\0\0@\5\0\0\0\0\0\0@\5\0\0\0\0\0xY\1\0\0\0\0\0xY\1\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\6\0\0\0\20\240\6\0\0\0\0\0\20\240\6\0\0\0\0\0"..., 832) = 832
+[pid 698878] fstat(3</usr/lib/libncursesw.so.6.5>, {st_dev=makedev(0, 0x23), st_ino=3121253, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=888, st_size=453896, st_atime=1743284008 /* 2025-03-29T22:33:28.816666631+0100 */, st_atime_nsec=816666631, st_mtime=1716619417 /* 2024-05-25T08:43:37+0200 */, st_mtime_nsec=0, st_ctime=1717531297 /* 2024-06-04T22:01:37.071349329+0200 */, st_ctime_nsec=71349329}) = 0
+[pid 698878] mmap(NULL, 453856, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib/libncursesw.so.6.5>, 0) = 0x7d4321830000
+[pid 698878] mmap(0x7d432183d000, 290816, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libncursesw.so.6.5>, 0xd000) = 0x7d432183d000
+[pid 698878] mmap(0x7d4321884000, 90112, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libncursesw.so.6.5>, 0x54000) = 0x7d4321884000
+[pid 698878] mmap(0x7d432189a000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libncursesw.so.6.5>, 0x6a000) = 0x7d432189a000
+[pid 698878] close(3</usr/lib/libncursesw.so.6.5>) = 0
+[pid 698878] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7d432182e000
+[pid 698878] arch_prctl(ARCH_SET_FS, 0x7d432182eb80) = 0
+[pid 698878] set_tid_address(0x7d432182ee50) = 698878
+[pid 698878] set_robust_list(0x7d432182ee60, 24) = 0
+[pid 698878] rseq(0x7d432182eac0, 0x20, 0, 0x53053053) = 0
+[pid 698878] mprotect(0x7d4321a83000, 16384, PROT_READ) = 0
+[pid 698878] mprotect(0x7d432189a000, 16384, PROT_READ) = 0
+[pid 698878] mprotect(0x7d4321add000, 12288, PROT_READ) = 0
+[pid 698878] mprotect(0x5f6d7e934000, 12288, PROT_READ) = 0
+[pid 698878] mprotect(0x7d4321b5c000, 8192, PROT_READ) = 0
+[pid 698878] prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid 698878] munmap(0x7d4321ae9000, 226227) = 0
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/dev/tty", O_RDWR|O_NONBLOCK) = 3</dev/tty>
+[pid 698878] close(3</dev/tty>)         = 0
+[pid 698878] getrandom("\x38\x5f\xaa\xff\x62\x44\x37\xcc", 8, GRND_NONBLOCK) = 8
+[pid 698878] brk(NULL)                  = 0x5f6dbc428000
+[pid 698878] brk(0x5f6dbc449000)        = 0x5f6dbc449000
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3</usr/lib/locale/locale-archive>
+[pid 698878] fstat(3</usr/lib/locale/locale-archive>, {st_dev=makedev(0, 0x23), st_ino=11538783, st_mode=S_IFREG|0644, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=5848, st_size=3067568, st_atime=1743284008 /* 2025-03-29T22:33:28.816666631+0100 */, st_atime_nsec=816666631, st_mtime=1740248476 /* 2025-02-22T19:21:16.973164914+0100 */, st_mtime_nsec=973164914, st_ctime=1740248476 /* 2025-02-22T19:21:16.973164914+0100 */, st_ctime_nsec=973164914}) = 0
+[pid 698878] mmap(NULL, 3067568, PROT_READ, MAP_PRIVATE, 3</usr/lib/locale/locale-archive>, 0) = 0x7d4321400000
+[pid 698878] close(3</usr/lib/locale/locale-archive>) = 0
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/gconv/gconv-modules.cache", O_RDONLY|O_CLOEXEC) = 3</usr/lib/gconv/gconv-modules.cache>
+[pid 698878] fstat(3</usr/lib/gconv/gconv-modules.cache>, {st_dev=makedev(0, 0x23), st_ino=11538785, st_mode=S_IFREG|0644, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=56, st_size=27010, st_atime=1743284008 /* 2025-03-29T22:33:28.819999964+0100 */, st_atime_nsec=819999964, st_mtime=1740248477 /* 2025-02-22T19:21:17.176496158+0100 */, st_mtime_nsec=176496158, st_ctime=1740248477 /* 2025-02-22T19:21:17.176496158+0100 */, st_ctime_nsec=176496158}) = 0
+[pid 698878] mmap(NULL, 27010, PROT_READ, MAP_SHARED, 3</usr/lib/gconv/gconv-modules.cache>, 0) = 0x7d4321b1a000
+[pid 698878] close(3</usr/lib/gconv/gconv-modules.cache>) = 0
+[pid 698878] futex(0x7d4321a8872c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 698878] getuid()                   = 1000
+[pid 698878] getgid()                   = 1000
+[pid 698878] geteuid()                  = 1000
+[pid 698878] getegid()                  = 1000
+[pid 698878] rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+[pid 698878] rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+[pid 698878] rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] uname({sysname="Linux", nodename="globus", release="6.13.6-arch1-1-surface", version="#1 SMP PREEMPT_DYNAMIC Sun, 09 Mar 2025 00:56:09 +0000", machine="x86_64", domainname="(none)"}) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/projects/AAUGrader", {st_dev=makedev(0, 0x31), st_ino=4819641, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=204, st_atime=1742223515 /* 2025-03-17T15:58:35.830964412+0100 */, st_atime_nsec=830964412, st_mtime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_mtime_nsec=274771656, st_ctime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_ctime_nsec=274771656}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, ".", {st_dev=makedev(0, 0x31), st_ino=4819641, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=204, st_atime=1742223515 /* 2025-03-17T15:58:35.830964412+0100 */, st_atime_nsec=830964412, st_mtime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_mtime_nsec=274771656, st_ctime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_ctime_nsec=274771656}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home", {st_dev=makedev(0, 0x31), st_ino=256, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=0, st_size=12, st_atime=1677012143 /* 2023-02-21T21:42:23.158171212+0100 */, st_atime_nsec=158171212, st_mtime=1677012708 /* 2023-02-21T21:51:48.113105326+0100 */, st_mtime_nsec=113105326, st_ctime=1677012708 /* 2023-02-21T21:51:48.113105326+0100 */, st_ctime_nsec=113105326}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie", {st_dev=makedev(0, 0x31), st_ino=257, st_mode=S_IFDIR|0700, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=1692, st_atime=1677012708 /* 2023-02-21T21:51:48.113105326+0100 */, st_atime_nsec=113105326, st_mtime=1743494883 /* 2025-04-01T10:08:03.423872097+0200 */, st_mtime_nsec=423872097, st_ctime=1743494883 /* 2025-04-01T10:08:03.423872097+0200 */, st_ctime_nsec=423872097}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/projects", {st_dev=makedev(0, 0x31), st_ino=20540, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=656, st_atime=1677016133 /* 2023-02-21T22:48:53.660454124+0100 */, st_atime_nsec=660454124, st_mtime=1742223515 /* 2025-03-17T15:58:35.831964404+0100 */, st_mtime_nsec=831964404, st_ctime=1742223515 /* 2025-03-17T15:58:35.831964404+0100 */, st_ctime_nsec=831964404}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/projects/AAUGrader", {st_dev=makedev(0, 0x31), st_ino=4819641, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=204, st_atime=1742223515 /* 2025-03-17T15:58:35.830964412+0100 */, st_atime_nsec=830964412, st_mtime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_mtime_nsec=274771656, st_ctime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_ctime_nsec=274771656}, 0) = 0
+[pid 698878] getpid()                   = 698878
+[pid 698878] getppid()                  = 698794
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, ".", {st_dev=makedev(0, 0x31), st_ino=4819641, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=204, st_atime=1742223515 /* 2025-03-17T15:58:35.830964412+0100 */, st_atime_nsec=830964412, st_mtime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_mtime_nsec=274771656, st_ctime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_ctime_nsec=274771656}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/.cargo/bin/sh", 0x7fffa58fc130, 0) = -1 ENOENT (No such file or directory)
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/.local/bin/sh", 0x7fffa58fc130, 0) = -1 ENOENT (No such file or directory)
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/go/bin/sh", 0x7fffa58fc130, 0) = -1 ENOENT (No such file or directory)
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/local/bin/sh", 0x7fffa58fc130, 0) = -1 ENOENT (No such file or directory)
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/bin/sh", {st_dev=makedev(0, 0x23), st_ino=12048366, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=2184, st_size=1117048, st_atime=1743284008 /* 2025-03-29T22:33:28.809999964+0100 */, st_atime_nsec=809999964, st_mtime=1741729995 /* 2025-03-11T22:53:15+0100 */, st_mtime_nsec=0, st_ctime=1741874889 /* 2025-03-13T15:08:09.667580480+0100 */, st_ctime_nsec=667580480}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/bin/sh", {st_dev=makedev(0, 0x23), st_ino=12048366, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=2184, st_size=1117048, st_atime=1743284008 /* 2025-03-29T22:33:28.809999964+0100 */, st_atime_nsec=809999964, st_mtime=1741729995 /* 2025-03-11T22:53:15+0100 */, st_mtime_nsec=0, st_ctime=1741874889 /* 2025-03-13T15:08:09.667580480+0100 */, st_ctime_nsec=667580480}, 0) = 0
+[pid 698878] geteuid()                  = 1000
+[pid 698878] getegid()                  = 1000
+[pid 698878] getuid()                   = 1000
+[pid 698878] getgid()                   = 1000
+[pid 698878] access("/usr/bin/sh", X_OK) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/bin/sh", {st_dev=makedev(0, 0x23), st_ino=12048366, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=2184, st_size=1117048, st_atime=1743284008 /* 2025-03-29T22:33:28.809999964+0100 */, st_atime_nsec=809999964, st_mtime=1741729995 /* 2025-03-11T22:53:15+0100 */, st_mtime_nsec=0, st_ctime=1741874889 /* 2025-03-13T15:08:09.667580480+0100 */, st_ctime_nsec=667580480}, 0) = 0
+[pid 698878] geteuid()                  = 1000
+[pid 698878] getegid()                  = 1000
+[pid 698878] getuid()                   = 1000
+[pid 698878] getgid()                   = 1000
+[pid 698878] access("/usr/bin/sh", R_OK) = 0
+[pid 698878] getpid()                   = 698878
+[pid 698878] getppid()                  = 698794
+[pid 698878] getpid()                   = 698878
+[pid 698878] getppid()                  = 698794
+[pid 698878] getpgrp()                  = 698792
+[pid 698878] ioctl(2</home/bummie/projects/AAUGrader/src/detection/samples/sberge24.strace>, TIOCGPGRP, 0x7fffa58fc494) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid 698878] rt_sigaction(SIGCHLD, {sa_handler=0x5f6d7e87aa60, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] ioctl(2</home/bummie/projects/AAUGrader/src/detection/samples/sberge24.strace>, TIOCGPGRP, 0x7fffa58fc444) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid 698878] prlimit64(0, RLIMIT_NPROC, NULL, {rlim_cur=62394, rlim_max=62394}) = 0
+[pid 698878] rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+[pid 698878] rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+[pid 698878] rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7d43218dccd0}, {sa_handler=0x5f6d7e87aa60, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7d43218dccd0}, 8) = 0
+[pid 698878] execve("/bin/sh", ["/bin/sh", "-c", "cat grades.txt"], ["SHELL=/usr/bin/fish", "WINDOWID=33612721", "COLORTERM=truecolor", "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0", "fish_color_cancel=ff5555 --reverse", "fish_pager_color_completion=f8f8f2", "I3SOCK=/run/user/1000/i3/ipc-socket.1308", "fish_color_command=8be9fd", "LC_ADDRESS=en_GB.UTF-8", "LC_NAME=en_GB.UTF-8", "CLOJURE_HOME=/usr/share/clojure", "DESKTOP_SESSION=i3", "LC_MONETARY=en_GB.UTF-8", "EDITOR=helix", "GTK_MODULES=canberra-gtk-module", "XDG_SEAT=seat0", "PWD=/home/bummie/projects/AAUGrader", "fish_pager_color_secondary_background=", "fish_color_end=ffb86c", "LOGNAME=bummie", "XDG_SESSION_DESKTOP=i3", "fish_color_param=bd93f9", "XDG_SESSION_TYPE=x11", "OMF_PATH=/home/bummie/.local/share/omf", "XAUTHORITY=/home/bummie/.Xauthority", "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/bummie", "TERMINAL=xfce4-terminal", "fish_pager_color_secondary_description=6272a4", "fish_pager_color_progress=6272a4", "MOTD_SHOWN=pam", "fish_color_host_remote=bd93f9", "fish_color_operator=50fa7b", "HOME=/home/bummie", "fish_pager_color_background=", "LANG=en_GB.UTF-8", "LC_PAPER=en_GB.UTF-8", "XDG_CURRENT_DESKTOP=i3", "fish_pager_color_selected_completion=f8f8f2", "fish_pager_color_secondary_completion=f8f8f2", "fish_color_host=bd93f9", "VTE_VERSION=8000", "fish_color_redirection=f8f8f2", "theme_display_user=no", "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0", "fish_pager_color_secondary_prefix=8be9fd", "fish_color_comment=6272a4", "fish_color_cwd=50fa7b", "fish_color_selection=--background=44475a", "fish_pager_color_selected_description=6272a4", "XDG_SESSION_CLASS=user", "TERM=xterm-256color", "LC_IDENTIFICATION=en_GB.UTF-8", "fish_color_autosuggestion=6272a4", "fish_color_option=ffb86c", "USER=bummie", "fish_color_quote=f1fa8c", "fish_color_normal=f8f8f2", "fish_color_user=8be9fd", "DISPLAY=:0", "SHLVL=2", "LC_TELEPHONE=en_GB.UTF-8", "fish_pager_color_selected_background=--background=44475a", "fish_color_keyword=ff79c6", "LC_MEASUREMENT=en_GB.UTF-8", "XDG_VTNR=7", "theme_title_display_user=no", "XDG_SESSION_ID=2", "XDG_RUNTIME_DIR=/run/user/1000", "fish_color_error=ff5555", "fish_pager_color_selected_prefix=8be9fd", "DEBUGINFOD_URLS=https://debuginfod.archlinux.org ", "LC_TIME=en_GB.UTF-8", "GTK3_MODULES=xapp-gtk3-module", "BROWSER=firefox", "PATH=/home/bummie/.cargo/bin:/home/bummie/.local/bin:/home/bummie/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl", "GDMSESSION=i3", "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus", "fish_color_search_match=--background=44475a", "MAIL=/var/spool/mail/bummie", "fish_pager_color_prefix=8be9fd", "OMF_CONFIG=/home/bummie/.config/omf", "fish_color_escape=ff79c6", "LC_NUMERIC=en_GB.UTF-8", "fish_pager_color_description=6272a4", "_=/bin/sh"]) = 0
+[pid 698878] brk(NULL)                  = 0x606706d1e000
+[pid 698878] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache>
+[pid 698878] fstat(3</etc/ld.so.cache>, {st_dev=makedev(0, 0x23), st_ino=12567820, st_mode=S_IFREG|0644, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=448, st_size=226227, st_atime=1743330499 /* 2025-03-30T12:28:19.603333302+0200 */, st_atime_nsec=603333302, st_mtime=1743284010 /* 2025-03-29T22:33:30.789999935+0100 */, st_mtime_nsec=789999935, st_ctime=1743284010 /* 2025-03-29T22:33:30.789999935+0100 */, st_ctime_nsec=789999935}) = 0
+[pid 698878] mmap(NULL, 226227, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0x7b3597cbd000
+[pid 698878] close(3</etc/ld.so.cache>) = 0
+[pid 698878] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b3597cbb000
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/libreadline.so.8", O_RDONLY|O_CLOEXEC) = 3</usr/lib/libreadline.so.8.2>
+[pid 698878] read(3</usr/lib/libreadline.so.8.2>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\2305\5\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\32\0\31\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\260H\1\0\0\0\0\0\260H\1\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0P\1\0\0\0\0\0\0P\1\0\0\0\0\0\0P\1\0\0\0\0\0\221\335\2\0\0\0\0\0\221\335\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0000\4\0\0\0\0\0\0000\4\0\0\0\0\0\0000\4\0\0\0\0\0\10\205\0\0\0\0\0\0\10\205\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\6\0\0\0\20\266\4\0\0\0\0\0\20\306\4\0\0\0\0\0"..., 832) = 832
+[pid 698878] fstat(3</usr/lib/libreadline.so.8.2>, {st_dev=makedev(0, 0x23), st_ino=3741716, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=672, st_size=343064, st_atime=1743284008 /* 2025-03-29T22:33:28.813333298+0100 */, st_atime_nsec=813333298, st_mtime=1722665881 /* 2024-08-03T08:18:01+0200 */, st_mtime_nsec=0, st_ctime=1723569915 /* 2024-08-13T19:25:15.605811033+0200 */, st_ctime_nsec=605811033}) = 0
+[pid 698878] mmap(NULL, 350904, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib/libreadline.so.8.2>, 0) = 0x7b3597c65000
+[pid 698878] mmap(0x7b3597c7a000, 188416, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libreadline.so.8.2>, 0x15000) = 0x7b3597c7a000
+[pid 698878] mmap(0x7b3597ca8000, 36864, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libreadline.so.8.2>, 0x43000) = 0x7b3597ca8000
+[pid 698878] mmap(0x7b3597cb1000, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libreadline.so.8.2>, 0x4b000) = 0x7b3597cb1000
+[pid 698878] mmap(0x7b3597cba000, 2744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b3597cba000
+[pid 698878] close(3</usr/lib/libreadline.so.8.2>) = 0
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/libc.so.6>
+[pid 698878] read(3</usr/lib/libc.so.6>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`v\2\0\0\0\0\0@\0\0\0\0\0\0\0x\255\36\0\0\0\0\0\0\0\0\0@\08\0\17\0@\0?\0>\0\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0h3\2\0\0\0\0\0h3\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0"..., 832) = 832
+[pid 698878] pread64(3</usr/lib/libc.so.6>, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0h3\2\0\0\0\0\0h3\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\331\1\27\0\0\0\0\0\331\1\27\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0"..., 840, 64) = 840
+[pid 698878] fstat(3</usr/lib/libc.so.6>, {st_dev=makedev(0, 0x23), st_ino=11538066, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=3936, st_size=2014520, st_atime=1743284008 /* 2025-03-29T22:33:28.706666633+0100 */, st_atime_nsec=706666633, st_mtime=1740040717 /* 2025-02-20T09:38:37+0100 */, st_mtime_nsec=0, st_ctime=1740248474 /* 2025-02-22T19:21:14.243192958+0100 */, st_ctime_nsec=243192958}) = 0
+[pid 698878] pread64(3</usr/lib/libc.so.6>, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0h3\2\0\0\0\0\0h3\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\331\1\27\0\0\0\0\0\331\1\27\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0"..., 840, 64) = 840
+[pid 698878] mmap(NULL, 2038904, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0) = 0x7b3597a73000
+[pid 698878] mmap(0x7b3597a97000, 1511424, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0x24000) = 0x7b3597a97000
+[pid 698878] mmap(0x7b3597c08000, 323584, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0x195000) = 0x7b3597c08000
+[pid 698878] mmap(0x7b3597c57000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0x1e3000) = 0x7b3597c57000
+[pid 698878] mmap(0x7b3597c5d000, 31864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b3597c5d000
+[pid 698878] close(3</usr/lib/libc.so.6>) = 0
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/libncursesw.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/libncursesw.so.6.5>
+[pid 698878] read(3</usr/lib/libncursesw.so.6.5>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\346\6\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\33\0\32\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\314\0\0\0\0\0\0`\314\0\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\320\0\0\0\0\0\0\0\320\0\0\0\0\0\0\0\320\0\0\0\0\0\0\351a\4\0\0\0\0\0\351a\4\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0@\5\0\0\0\0\0\0@\5\0\0\0\0\0\0@\5\0\0\0\0\0xY\1\0\0\0\0\0xY\1\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\6\0\0\0\20\240\6\0\0\0\0\0\20\240\6\0\0\0\0\0"..., 832) = 832
+[pid 698878] fstat(3</usr/lib/libncursesw.so.6.5>, {st_dev=makedev(0, 0x23), st_ino=3121253, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=888, st_size=453896, st_atime=1743284008 /* 2025-03-29T22:33:28.816666631+0100 */, st_atime_nsec=816666631, st_mtime=1716619417 /* 2024-05-25T08:43:37+0200 */, st_mtime_nsec=0, st_ctime=1717531297 /* 2024-06-04T22:01:37.071349329+0200 */, st_ctime_nsec=71349329}) = 0
+[pid 698878] mmap(NULL, 453856, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib/libncursesw.so.6.5>, 0) = 0x7b3597a04000
+[pid 698878] mmap(0x7b3597a11000, 290816, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libncursesw.so.6.5>, 0xd000) = 0x7b3597a11000
+[pid 698878] mmap(0x7b3597a58000, 90112, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libncursesw.so.6.5>, 0x54000) = 0x7b3597a58000
+[pid 698878] mmap(0x7b3597a6e000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libncursesw.so.6.5>, 0x6a000) = 0x7b3597a6e000
+[pid 698878] close(3</usr/lib/libncursesw.so.6.5>) = 0
+[pid 698878] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b3597a02000
+[pid 698878] arch_prctl(ARCH_SET_FS, 0x7b3597a02b80) = 0
+[pid 698878] set_tid_address(0x7b3597a02e50) = 698878
+[pid 698878] set_robust_list(0x7b3597a02e60, 24) = 0
+[pid 698878] rseq(0x7b3597a02ac0, 0x20, 0, 0x53053053) = 0
+[pid 698878] mprotect(0x7b3597c57000, 16384, PROT_READ) = 0
+[pid 698878] mprotect(0x7b3597a6e000, 16384, PROT_READ) = 0
+[pid 698878] mprotect(0x7b3597cb1000, 12288, PROT_READ) = 0
+[pid 698878] mprotect(0x6066fa8d0000, 12288, PROT_READ) = 0
+[pid 698878] mprotect(0x7b3597d30000, 8192, PROT_READ) = 0
+[pid 698878] prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid 698878] munmap(0x7b3597cbd000, 226227) = 0
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/dev/tty", O_RDWR|O_NONBLOCK) = 3</dev/tty>
+[pid 698878] close(3</dev/tty>)         = 0
+[pid 698878] getrandom("\xd8\x91\xd9\x76\x4f\x95\xe3\x47", 8, GRND_NONBLOCK) = 8
+[pid 698878] brk(NULL)                  = 0x606706d1e000
+[pid 698878] brk(0x606706d3f000)        = 0x606706d3f000
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3</usr/lib/locale/locale-archive>
+[pid 698878] fstat(3</usr/lib/locale/locale-archive>, {st_dev=makedev(0, 0x23), st_ino=11538783, st_mode=S_IFREG|0644, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=5848, st_size=3067568, st_atime=1743284008 /* 2025-03-29T22:33:28.816666631+0100 */, st_atime_nsec=816666631, st_mtime=1740248476 /* 2025-02-22T19:21:16.973164914+0100 */, st_mtime_nsec=973164914, st_ctime=1740248476 /* 2025-02-22T19:21:16.973164914+0100 */, st_ctime_nsec=973164914}) = 0
+[pid 698878] mmap(NULL, 3067568, PROT_READ, MAP_PRIVATE, 3</usr/lib/locale/locale-archive>, 0) = 0x7b3597600000
+[pid 698878] close(3</usr/lib/locale/locale-archive>) = 0
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/gconv/gconv-modules.cache", O_RDONLY|O_CLOEXEC) = 3</usr/lib/gconv/gconv-modules.cache>
+[pid 698878] fstat(3</usr/lib/gconv/gconv-modules.cache>, {st_dev=makedev(0, 0x23), st_ino=11538785, st_mode=S_IFREG|0644, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=56, st_size=27010, st_atime=1743284008 /* 2025-03-29T22:33:28.819999964+0100 */, st_atime_nsec=819999964, st_mtime=1740248477 /* 2025-02-22T19:21:17.176496158+0100 */, st_mtime_nsec=176496158, st_ctime=1740248477 /* 2025-02-22T19:21:17.176496158+0100 */, st_ctime_nsec=176496158}) = 0
+[pid 698878] mmap(NULL, 27010, PROT_READ, MAP_SHARED, 3</usr/lib/gconv/gconv-modules.cache>, 0) = 0x7b3597cee000
+[pid 698878] close(3</usr/lib/gconv/gconv-modules.cache>) = 0
+[pid 698878] futex(0x7b3597c5c72c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 698878] getuid()                   = 1000
+[pid 698878] getgid()                   = 1000
+[pid 698878] geteuid()                  = 1000
+[pid 698878] getegid()                  = 1000
+[pid 698878] rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+[pid 698878] rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 698878] rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+[pid 698878] rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] uname({sysname="Linux", nodename="globus", release="6.13.6-arch1-1-surface", version="#1 SMP PREEMPT_DYNAMIC Sun, 09 Mar 2025 00:56:09 +0000", machine="x86_64", domainname="(none)"}) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/projects/AAUGrader", {st_dev=makedev(0, 0x31), st_ino=4819641, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=204, st_atime=1742223515 /* 2025-03-17T15:58:35.830964412+0100 */, st_atime_nsec=830964412, st_mtime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_mtime_nsec=274771656, st_ctime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_ctime_nsec=274771656}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, ".", {st_dev=makedev(0, 0x31), st_ino=4819641, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=204, st_atime=1742223515 /* 2025-03-17T15:58:35.830964412+0100 */, st_atime_nsec=830964412, st_mtime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_mtime_nsec=274771656, st_ctime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_ctime_nsec=274771656}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home", {st_dev=makedev(0, 0x31), st_ino=256, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=0, st_size=12, st_atime=1677012143 /* 2023-02-21T21:42:23.158171212+0100 */, st_atime_nsec=158171212, st_mtime=1677012708 /* 2023-02-21T21:51:48.113105326+0100 */, st_mtime_nsec=113105326, st_ctime=1677012708 /* 2023-02-21T21:51:48.113105326+0100 */, st_ctime_nsec=113105326}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie", {st_dev=makedev(0, 0x31), st_ino=257, st_mode=S_IFDIR|0700, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=1692, st_atime=1677012708 /* 2023-02-21T21:51:48.113105326+0100 */, st_atime_nsec=113105326, st_mtime=1743494883 /* 2025-04-01T10:08:03.423872097+0200 */, st_mtime_nsec=423872097, st_ctime=1743494883 /* 2025-04-01T10:08:03.423872097+0200 */, st_ctime_nsec=423872097}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/projects", {st_dev=makedev(0, 0x31), st_ino=20540, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=656, st_atime=1677016133 /* 2023-02-21T22:48:53.660454124+0100 */, st_atime_nsec=660454124, st_mtime=1742223515 /* 2025-03-17T15:58:35.831964404+0100 */, st_mtime_nsec=831964404, st_ctime=1742223515 /* 2025-03-17T15:58:35.831964404+0100 */, st_ctime_nsec=831964404}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/projects/AAUGrader", {st_dev=makedev(0, 0x31), st_ino=4819641, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=204, st_atime=1742223515 /* 2025-03-17T15:58:35.830964412+0100 */, st_atime_nsec=830964412, st_mtime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_mtime_nsec=274771656, st_ctime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_ctime_nsec=274771656}, 0) = 0
+[pid 698878] getpid()                   = 698878
+[pid 698878] getppid()                  = 698794
+[pid 698878] getpid()                   = 698878
+[pid 698878] getppid()                  = 698794
+[pid 698878] getpid()                   = 698878
+[pid 698878] getppid()                  = 698794
+[pid 698878] getpgrp()                  = 698792
+[pid 698878] ioctl(2</home/bummie/projects/AAUGrader/src/detection/samples/sberge24.strace>, TIOCGPGRP, 0x7fff725bea24) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid 698878] rt_sigaction(SIGCHLD, {sa_handler=0x6066fa816a60, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] ioctl(2</home/bummie/projects/AAUGrader/src/detection/samples/sberge24.strace>, TIOCGPGRP, 0x7fff725be9d4) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid 698878] prlimit64(0, RLIMIT_NPROC, NULL, {rlim_cur=62394, rlim_max=62394}) = 0
+[pid 698878] rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+[pid 698878] rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, ".", {st_dev=makedev(0, 0x31), st_ino=4819641, st_mode=S_IFDIR|0755, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=204, st_atime=1742223515 /* 2025-03-17T15:58:35.830964412+0100 */, st_atime_nsec=830964412, st_mtime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_mtime_nsec=274771656, st_ctime=1743363012 /* 2025-03-30T21:30:12.274771656+0200 */, st_ctime_nsec=274771656}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/.cargo/bin/cat", 0x7fff725be470, 0) = -1 ENOENT (No such file or directory)
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/.local/bin/cat", 0x7fff725be470, 0) = -1 ENOENT (No such file or directory)
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/home/bummie/go/bin/cat", 0x7fff725be470, 0) = -1 ENOENT (No such file or directory)
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/local/bin/cat", 0x7fff725be470, 0) = -1 ENOENT (No such file or directory)
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/bin/cat", {st_dev=makedev(0, 0x23), st_ino=12051255, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=80, st_size=39088, st_atime=1741874890 /* 2025-03-13T15:08:10+0100 */, st_atime_nsec=0, st_mtime=1741292350 /* 2025-03-06T21:19:10+0100 */, st_mtime_nsec=0, st_ctime=1741874890 /* 2025-03-13T15:08:10.040911690+0100 */, st_ctime_nsec=40911690}, 0) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/bin/cat", {st_dev=makedev(0, 0x23), st_ino=12051255, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=80, st_size=39088, st_atime=1741874890 /* 2025-03-13T15:08:10+0100 */, st_atime_nsec=0, st_mtime=1741292350 /* 2025-03-06T21:19:10+0100 */, st_mtime_nsec=0, st_ctime=1741874890 /* 2025-03-13T15:08:10.040911690+0100 */, st_ctime_nsec=40911690}, 0) = 0
+[pid 698878] geteuid()                  = 1000
+[pid 698878] getegid()                  = 1000
+[pid 698878] getuid()                   = 1000
+[pid 698878] getgid()                   = 1000
+[pid 698878] access("/usr/bin/cat", X_OK) = 0
+[pid 698878] newfstatat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/bin/cat", {st_dev=makedev(0, 0x23), st_ino=12051255, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=80, st_size=39088, st_atime=1741874890 /* 2025-03-13T15:08:10+0100 */, st_atime_nsec=0, st_mtime=1741292350 /* 2025-03-06T21:19:10+0100 */, st_mtime_nsec=0, st_ctime=1741874890 /* 2025-03-13T15:08:10.040911690+0100 */, st_ctime_nsec=40911690}, 0) = 0
+[pid 698878] geteuid()                  = 1000
+[pid 698878] getegid()                  = 1000
+[pid 698878] getuid()                   = 1000
+[pid 698878] getgid()                   = 1000
+[pid 698878] access("/usr/bin/cat", R_OK) = 0
+[pid 698878] rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7b3597ab0cd0}, {sa_handler=0x6066fa816a60, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7b3597ab0cd0}, 8) = 0
+[pid 698878] execve("/usr/bin/cat", ["cat", "grades.txt"], ["SHELL=/usr/bin/fish", "WINDOWID=33612721", "COLORTERM=truecolor", "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0", "fish_color_cancel=ff5555 --reverse", "fish_pager_color_completion=f8f8f2", "I3SOCK=/run/user/1000/i3/ipc-socket.1308", "fish_color_command=8be9fd", "LC_ADDRESS=en_GB.UTF-8", "LC_NAME=en_GB.UTF-8", "CLOJURE_HOME=/usr/share/clojure", "DESKTOP_SESSION=i3", "LC_MONETARY=en_GB.UTF-8", "EDITOR=helix", "GTK_MODULES=canberra-gtk-module", "XDG_SEAT=seat0", "PWD=/home/bummie/projects/AAUGrader", "fish_pager_color_secondary_background=", "fish_color_end=ffb86c", "XDG_SESSION_DESKTOP=i3", "LOGNAME=bummie", "fish_color_param=bd93f9", "XDG_SESSION_TYPE=x11", "_=/usr/bin/cat", "OMF_PATH=/home/bummie/.local/share/omf", "XAUTHORITY=/home/bummie/.Xauthority", "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/bummie", "TERMINAL=xfce4-terminal", "fish_pager_color_progress=6272a4", "fish_pager_color_secondary_description=6272a4", "MOTD_SHOWN=pam", "fish_color_host_remote=bd93f9", "fish_color_operator=50fa7b", "HOME=/home/bummie", "fish_pager_color_background=", "LC_PAPER=en_GB.UTF-8", "LANG=en_GB.UTF-8", "XDG_CURRENT_DESKTOP=i3", "fish_pager_color_selected_completion=f8f8f2", "fish_pager_color_secondary_completion=f8f8f2", "fish_color_host=bd93f9", "VTE_VERSION=8000", "fish_color_redirection=f8f8f2", "theme_display_user=no", "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0", "fish_pager_color_secondary_prefix=8be9fd", "fish_color_comment=6272a4", "fish_color_cwd=50fa7b", "fish_color_selection=--background=44475a", "fish_pager_color_selected_description=6272a4", "XDG_SESSION_CLASS=user", "LC_IDENTIFICATION=en_GB.UTF-8", "TERM=xterm-256color", "fish_color_autosuggestion=6272a4", "fish_color_option=ffb86c", "USER=bummie", "fish_color_quote=f1fa8c", "fish_color_normal=f8f8f2", "fish_color_user=8be9fd", "DISPLAY=:0", "SHLVL=2", "LC_TELEPHONE=en_GB.UTF-8", "fish_pager_color_selected_background=--background=44475a", "LC_MEASUREMENT=en_GB.UTF-8", "fish_color_keyword=ff79c6", "XDG_VTNR=7", "theme_title_display_user=no", "XDG_SESSION_ID=2", "XDG_RUNTIME_DIR=/run/user/1000", "fish_color_error=ff5555", "fish_pager_color_selected_prefix=8be9fd", "DEBUGINFOD_URLS=https://debuginfod.archlinux.org ", "LC_TIME=en_GB.UTF-8", "GTK3_MODULES=xapp-gtk3-module", "BROWSER=firefox", "PATH=/home/bummie/.cargo/bin:/home/bummie/.local/bin:/home/bummie/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl", "GDMSESSION=i3", "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus", "fish_color_search_match=--background=44475a", "MAIL=/var/spool/mail/bummie", "fish_pager_color_prefix=8be9fd", "OMF_CONFIG=/home/bummie/.config/omf", "fish_color_escape=ff79c6", "LC_NUMERIC=en_GB.UTF-8", "fish_pager_color_description=6272a4"]) = 0
+[pid 698878] brk(NULL)                  = 0x626941599000
+[pid 698878] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache>
+[pid 698878] fstat(3</etc/ld.so.cache>, {st_dev=makedev(0, 0x23), st_ino=12567820, st_mode=S_IFREG|0644, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=448, st_size=226227, st_atime=1743330499 /* 2025-03-30T12:28:19.603333302+0200 */, st_atime_nsec=603333302, st_mtime=1743284010 /* 2025-03-29T22:33:30.789999935+0100 */, st_mtime_nsec=789999935, st_ctime=1743284010 /* 2025-03-29T22:33:30.789999935+0100 */, st_ctime_nsec=789999935}) = 0
+[pid 698878] mmap(NULL, 226227, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0x7b074dd96000
+[pid 698878] close(3</etc/ld.so.cache>) = 0
+[pid 698878] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b074dd94000
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/libc.so.6>
+[pid 698878] read(3</usr/lib/libc.so.6>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`v\2\0\0\0\0\0@\0\0\0\0\0\0\0x\255\36\0\0\0\0\0\0\0\0\0@\08\0\17\0@\0?\0>\0\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0h3\2\0\0\0\0\0h3\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0"..., 832) = 832
+[pid 698878] pread64(3</usr/lib/libc.so.6>, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0h3\2\0\0\0\0\0h3\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\331\1\27\0\0\0\0\0\331\1\27\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0"..., 840, 64) = 840
+[pid 698878] fstat(3</usr/lib/libc.so.6>, {st_dev=makedev(0, 0x23), st_ino=11538066, st_mode=S_IFREG|0755, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=3936, st_size=2014520, st_atime=1743284008 /* 2025-03-29T22:33:28.706666633+0100 */, st_atime_nsec=706666633, st_mtime=1740040717 /* 2025-02-20T09:38:37+0100 */, st_mtime_nsec=0, st_ctime=1740248474 /* 2025-02-22T19:21:14.243192958+0100 */, st_ctime_nsec=243192958}) = 0
+[pid 698878] pread64(3</usr/lib/libc.so.6>, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0H\3\0\0\0\0\0\0H\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\2402\36\0\0\0\0\0\36\0\0\0\0\0\0\0\36\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0h3\2\0\0\0\0\0h3\2\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\0@\2\0\0\0\0\0\331\1\27\0\0\0\0\0\331\1\27\0\0\0\0\0\0\20\0\0\0\0\0\0\1\0\0\0\4\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0\0P\31\0\0\0\0\0"..., 840, 64) = 840
+[pid 698878] mmap(NULL, 2038904, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0) = 0x7b074dba2000
+[pid 698878] mmap(0x7b074dbc6000, 1511424, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0x24000) = 0x7b074dbc6000
+[pid 698878] mmap(0x7b074dd37000, 323584, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0x195000) = 0x7b074dd37000
+[pid 698878] mmap(0x7b074dd86000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/libc.so.6>, 0x1e3000) = 0x7b074dd86000
+[pid 698878] mmap(0x7b074dd8c000, 31864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b074dd8c000
+[pid 698878] close(3</usr/lib/libc.so.6>) = 0
+[pid 698878] mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b074db9f000
+[pid 698878] arch_prctl(ARCH_SET_FS, 0x7b074db9f740) = 0
+[pid 698878] set_tid_address(0x7b074db9fa10) = 698878
+[pid 698878] set_robust_list(0x7b074db9fa20, 24) = 0
+[pid 698878] rseq(0x7b074db9f680, 0x20, 0, 0x53053053) = 0
+[pid 698878] mprotect(0x7b074dd86000, 16384, PROT_READ) = 0
+[pid 698878] mprotect(0x626937fd1000, 4096, PROT_READ) = 0
+[pid 698878] mprotect(0x7b074de09000, 8192, PROT_READ) = 0
+[pid 698878] prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid 698878] munmap(0x7b074dd96000, 226227) = 0
+[pid 698878] getrandom("\x78\x0a\x8d\x0c\xa1\x14\x64\xce", 8, GRND_NONBLOCK) = 8
+[pid 698878] brk(NULL)                  = 0x626941599000
+[pid 698878] brk(0x6269415ba000)        = 0x6269415ba000
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3</usr/lib/locale/locale-archive>
+[pid 698878] fstat(3</usr/lib/locale/locale-archive>, {st_dev=makedev(0, 0x23), st_ino=11538783, st_mode=S_IFREG|0644, st_nlink=1, st_uid=0, st_gid=0, st_blksize=4096, st_blocks=5848, st_size=3067568, st_atime=1743284008 /* 2025-03-29T22:33:28.816666631+0100 */, st_atime_nsec=816666631, st_mtime=1740248476 /* 2025-02-22T19:21:16.973164914+0100 */, st_mtime_nsec=973164914, st_ctime=1740248476 /* 2025-02-22T19:21:16.973164914+0100 */, st_ctime_nsec=973164914}) = 0
+[pid 698878] mmap(NULL, 3067568, PROT_READ, MAP_PRIVATE, 3</usr/lib/locale/locale-archive>, 0) = 0x7b074d800000
+[pid 698878] close(3</usr/lib/locale/locale-archive>) = 0
+[pid 698878] fstat(1<pipe:[2590041]>, {st_dev=makedev(0, 0xf), st_ino=2590041, st_mode=S_IFIFO|0600, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=0, st_size=0, st_atime=1743514859 /* 2025-04-01T15:40:59.545633860+0200 */, st_atime_nsec=545633860, st_mtime=1743514859 /* 2025-04-01T15:40:59.545633860+0200 */, st_mtime_nsec=545633860, st_ctime=1743514859 /* 2025-04-01T15:40:59.545633860+0200 */, st_ctime_nsec=545633860}) = 0
+[pid 698878] openat(AT_FDCWD</home/bummie/projects/AAUGrader>, "grades.txt", O_RDONLY) = 3</home/bummie/projects/AAUGrader/grades.txt>
+[pid 698878] fstat(3</home/bummie/projects/AAUGrader/grades.txt>, {st_dev=makedev(0, 0x31), st_ino=4970223, st_mode=S_IFREG|0644, st_nlink=1, st_uid=1000, st_gid=1000, st_blksize=4096, st_blocks=8, st_size=117, st_atime=1743076299 /* 2025-03-27T12:51:39.049701561+0100 */, st_atime_nsec=49701561, st_mtime=1743076299 /* 2025-03-27T12:51:39.049701561+0100 */, st_mtime_nsec=49701561, st_ctime=1743076299 /* 2025-03-27T12:51:39.063035075+0100 */, st_ctime_nsec=63035075}) = 0
+[pid 698878] fadvise64(3</home/bummie/projects/AAUGrader/grades.txt>, 0, 0, POSIX_FADV_SEQUENTIAL) = 0
+[pid 698878] mmap(NULL, 270336, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b074db5d000
+[pid 698878] read(3</home/bummie/projects/AAUGrader/grades.txt>, "vfrank21:12;12;12;12;12\nslaza24:12;12;12;12;12\nlsfr21:12;12;12;12;12\nmagdan21:12;12;12;12;12\nsberge24:02;02;04;07;12\n", 262144) = 117
+[pid 698878] write(1<pipe:[2590041]>, "vfrank21:12;12;12;12;12\nslaza24:12;12;12;12;12\nlsfr21:12;12;12;12;12\nmagdan21:12;12;12;12;12\nsberge24:02;02;04;07;12\n", 117) = 117
+[pid 698878] read(3</home/bummie/projects/AAUGrader/grades.txt>, "", 262144) = 0
+[pid 698878] munmap(0x7b074db5d000, 270336) = 0
+[pid 698794] <... read resumed>"vfrank21:12;12;12;12;12\nslaza24:12;12;12;12;12\nlsfr21:12;12;12;12;12\nmagdan21:12;12;12;12;12\nsberge24:02;02;04;07;12\n", 4096) = 117
+[pid 698878] close(3</home/bummie/projects/AAUGrader/grades.txt>) = 0
+[pid 698794] write(1</dev/pts/5>, "\t02\n", 4 <unfinished ...>
+[pid 698878] close(1<pipe:[2590041]>)   = 0
+[pid 698878] close(2</home/bummie/projects/AAUGrader/src/detection/samples/sberge24.strace>) = 0
+[pid 698794] <... write resumed>)       = 4
+[pid 698878] exit_group(0)              = ?
+[pid 698794] write(1</dev/pts/5>, "\t02\n", 4) = 4
+[pid 698878] +++ exited with 0 +++
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=698878, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+write(1</dev/pts/5>, "\t04\n", 4)       = 4
+write(1</dev/pts/5>, "\t07\n", 4)       = 4
+write(1</dev/pts/5>, "\t12\n\n", 5)     = 5
+close(3<pipe:[2590041]>)                = 0
+wait4(698878, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 698878
+exit_group(0)                           = ?
++++ exited with 0 +++
