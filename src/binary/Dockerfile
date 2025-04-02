@@ -11,8 +11,8 @@ WORKDIR /home/jens
 
 COPY ./grades.txt ./
 COPY ./aaugrader ./
-COPY ./src/run.sh ./
-COPY ./src/aaugrader.sh ./
+COPY ./run.sh ./
+COPY ./aaugrader.sh ./
 
 RUN chown -R jens:jens /home/jens && \
     chmod 750 /home/jens && \
