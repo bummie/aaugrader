@@ -2,8 +2,8 @@
 import argparse
 import sys
 
-import syscallparser as sp
 import syscallgrouper as sg
+import syscallparser as sp
 
 
 def parse_stdin_to_syscalls() -> list[sp.Syscall]:

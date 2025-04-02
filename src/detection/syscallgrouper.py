@@ -3,14 +3,13 @@ from collections import defaultdict
 
 import syscallparser as sp
 
-
 class SyscallGroup:
     def __init__(
         self,
-        pids: int,
-        syscalls: dict[str, int],
-        read: dict[str, int],
-        write: dict[str, int],
+        pids: int = 0,
+        syscalls: dict[str, int] = {},
+        read: dict[str, int] = {},
+        write: dict[str, int] = {},
     ):
         self.pids = pids
         self.syscalls = syscalls
@@ -19,6 +18,47 @@ class SyscallGroup:
 
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
+
+    def from_json(self, json_str: str):
+        sg = json.loads(json_str)
+        self.pids = sg["pids"]
+        self.syscalls = sg["syscalls"]
+        self.read = sg["read"]
+        self.write = sg["write"]
+
+    def malicious_score(self, base_group) -> int:
+
+        # TODO: return reasons for score given
+
+        # Score multipliers
+        multiplier_new_syscall = 10
+        multiplier_new_file_write = 10
+        multiplier_new_file_read = 10
+
+        score = 0
+
+        # One point for each different extra PID
+        pid_difference = self.pids - base_group.pids
+        if pid_difference > 0:
+            score += pid_difference
+
+        # Check if the group we are testing has more syscall than base
+        for key in self.syscalls.keys():
+            if key not in base_group.syscalls:
+                score += 1 * multiplier_new_syscall
+
+        # TODO: Check difference in amount of readings and writings? Compare
+        for key in self.read.keys():
+            if key not in base_group.read:
+                score += 1 * multiplier_new_file_read
+                score += self.read[key]
+                
+        for key in self.write.keys():
+            if key not in base_group.write:
+                score += 1 * multiplier_new_file_write
+                score += self.write[key]
+
+        return score
 
 
 # read a list of syscalls and groups them into one object
