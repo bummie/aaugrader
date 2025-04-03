@@ -96,5 +96,8 @@ def group_syscalls(syscalls: list[sp.Syscall]) -> SyscallGroup:
         # socket if ip port is exposed
 
     return SyscallGroup(
-        len(pids), dict(syscalls_counter), dict(read_files), dict(write_files)
+        pids=len(pids),
+        syscalls=dict(syscalls_counter),
+        read=dict(read_files),
+        write=dict(write_files),
     )

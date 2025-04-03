@@ -15,7 +15,6 @@
         <th>Name</th>
         <th>PIDS</th>
         <th>Syscalls</th>
-        <th>Write</th>
         <th>Read</th>
         <th>Write</th>
         <th>Score</th>
@@ -26,10 +25,10 @@
         <tr>
           <td>{{ syscallgroup.name }}</td>
           <td>{{ syscallgroup.pids}}</td>
-          <td>{{ len(syscallgroup.syscalls) }}</td>
-          <td>{{ len(syscallgroup.read) }}</td>
-          <td>{{ len(syscallgroup.write) }}</td>
-          <td>{{ len(syscallgroup.score) }}</td>
+          <td>{{ syscallgroup.syscalls|length }}</td>
+          <td>{{ syscallgroup.read|length }}</td>
+          <td>{{ syscallgroup.write|length }}</td>
+          <td>{{ syscallgroup.score }}</td>
         </tr>
       {% endfor %}
     </tbody>

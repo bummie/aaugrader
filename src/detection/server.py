@@ -25,7 +25,12 @@ def parse_request_data_to_syscalls(data) -> list[sp.Syscall]:
 
 
 def list_files(directory):
-    return [f.name for f in Path(directory).iterdir() if f.is_file()]
+    os.makedirs(directory, exist_ok=True)
+    return [
+        Path.joinpath(Path(directory), f.name)
+        for f in Path(directory).iterdir()
+        if f.is_file()
+    ]
 
 
 def load_syscallgroups_from_path(path: str) -> list[sg.SyscallGroup]:
@@ -37,9 +42,10 @@ def load_syscallgroups_from_path(path: str) -> list[sg.SyscallGroup]:
             with open(filepath, "r", encoding="utf-8") as file:
                 content = file.read()
                 syscallGroup.from_json(content)
+                syscallGroup.name = Path(filepath).name
             syscall_groups.append(syscallGroup)
-    except Exception:
-        print("Could not load directory")
+    except Exception as exception:
+        print("Could not load directory " + exception)
     return syscall_groups
 
 
@@ -55,7 +61,7 @@ def save_data(data: str, folder: str, filename: str):
 
 @app.route("/")
 def main_page():
-    syscall_groups = load_syscallgroups_from_path("waiting")
+    syscall_groups = load_syscallgroups_from_path("syscallgroups")
 
     return render_template("index.html", syscallgroups=syscall_groups)
 
@@ -72,7 +78,7 @@ def upload():
     #
     #
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    save_data(syscallsgrouped.to_json(), "waiting", f"{timestamp}.json")
+    save_data(syscallsgrouped.to_json(), "syscallgroups", f"{timestamp}.json")
 
     return "Thanks!"
 
