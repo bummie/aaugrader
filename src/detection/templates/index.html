@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IDS Central 1337</title>
+    <link rel="stylesheet" href="/static/pico.pumpkin.min.css">
+</head>
+<body>
+    <h1>Intrusion Detection System Central 1337</h1>
+    <h2>Hackers be warned!</h2>
+
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>PIDS</th>
+        <th>Syscalls</th>
+        <th>Write</th>
+        <th>Read</th>
+        <th>Write</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for syscallgroup in syscallgroups %}
+        <tr>
+          <td>{{ syscallgroup.name }}</td>
+          <td>{{ syscallgroup.pids}}</td>
+          <td>{{ len(syscallgroup.syscalls) }}</td>
+          <td>{{ len(syscallgroup.read) }}</td>
+          <td>{{ len(syscallgroup.write) }}</td>
+          <td>{{ len(syscallgroup.score) }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
