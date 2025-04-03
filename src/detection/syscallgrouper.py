@@ -3,31 +3,37 @@ from collections import defaultdict
 
 import syscallparser as sp
 
+
 class SyscallGroup:
     def __init__(
         self,
+        name: str = "",
         pids: int = 0,
         syscalls: dict[str, int] = {},
         read: dict[str, int] = {},
         write: dict[str, int] = {},
+        score: int = 0,
     ):
+        self.name = name
         self.pids = pids
         self.syscalls = syscalls
         self.read = read
         self.write = write
+        self.score = score
 
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
 
     def from_json(self, json_str: str):
         sg = json.loads(json_str)
-        self.pids = sg["pids"]
-        self.syscalls = sg["syscalls"]
-        self.read = sg["read"]
-        self.write = sg["write"]
+        self.name = sg.get("name", "")
+        self.pids = sg.get("pids", 0)
+        self.syscalls = sg.get("syscalls", {})
+        self.read = sg.get("read", {})
+        self.write = sg.get("write", {})
+        self.score = sg.get("score", 0)
 
-    def malicious_score(self, base_group) -> int:
-
+    def calculate_malicious_score(self, base_group):
         # TODO: return reasons for score given
 
         # Score multipliers
@@ -52,13 +58,13 @@ class SyscallGroup:
             if key not in base_group.read:
                 score += 1 * multiplier_new_file_read
                 score += self.read[key]
-                
+
         for key in self.write.keys():
             if key not in base_group.write:
                 score += 1 * multiplier_new_file_write
                 score += self.write[key]
 
-        return score
+        self.score = score
 
 
 # read a list of syscalls and groups them into one object

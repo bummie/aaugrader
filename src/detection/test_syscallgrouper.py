@@ -235,12 +235,12 @@ def test_scoring():
     ng = normal_syscallgroup()
     nug = normal_unknown_user_syscallgroup()
 
-    score = nug.malicious_score(ng)
-    print(f"Normal: {score}")
-    
-    score = hg.malicious_score(ng)
-    print(f"Hacker: {score}")
-    assert score > 0
+    nug.calculate_malicious_score(ng)
+    print(f"Normal: {nug.score}")
+
+    hg.calculate_malicious_score(ng)
+    print(f"Hacker: {hg.score}")
+    assert hg.score > 0
 
 
 if __name__ == "__main__":
