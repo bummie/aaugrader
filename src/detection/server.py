@@ -1,84 +1,43 @@
-import os
 from datetime import datetime
-from pathlib import Path
 
+import utils
 import syscallgrouper as sg
-import syscallparser as sp
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
 
-def parse_request_data_to_syscalls(data) -> list[sp.Syscall]:
-    syscalls: list[sp.Syscall] = []
-
-    for line in data.splitlines():
-        syscall = None
-        try:
-            syscall = sp.parse_strace_output(str(line))
-            syscalls.append(syscall)
-        except Exception:
-            # print(f"failed parsing line: {err}\n{line}", file=sys.stderr)
-            continue
-
-    return syscalls
-
-
-def list_files(directory):
-    os.makedirs(directory, exist_ok=True)
-    return [
-        Path.joinpath(Path(directory), f.name)
-        for f in Path(directory).iterdir()
-        if f.is_file()
-    ]
-
-
-def load_syscallgroups_from_path(path: str) -> list[sg.SyscallGroup]:
-    syscall_groups = []
-
-    try:
-        for filepath in list_files(path):
-            syscallGroup = sg.SyscallGroup()
-            with open(filepath, "r", encoding="utf-8") as file:
-                content = file.read()
-                syscallGroup.from_json(content)
-                syscallGroup.name = Path(filepath).name
-            syscall_groups.append(syscallGroup)
-    except Exception as exception:
-        print("Could not load directory " + exception)
-    return syscall_groups
-
-
-def save_data(data: str, folder: str, filename: str):
-    os.makedirs(folder, exist_ok=True)
-    file_path = os.path.join(folder, filename)
-
-    with open(file_path, "w", encoding="utf-8") as file:
-        file.write(data)
-
-    print(f"Data saved at file saved at: {file_path}")
-
-
 @app.route("/")
 def main_page():
-    syscall_groups = load_syscallgroups_from_path("syscallgroups")
+    syscall_groups = utils.load_syscallgroups_from_path("syscallgroups")
 
     return render_template("index.html", syscallgroups=syscall_groups)
+
+
+@app.route("/event")
+def view_event():
+    syscallgroup_name = request.args.get("name", "")
+    syscallgroup = utils.load_syscallgroup_from_name(syscallgroup_name)
+
+    if syscallgroup is None:
+        return "<h1>Could not find syscallgroup!</h1>"
+
+    return render_template("event.html", syscallgroup=syscallgroup)
 
 
 @app.post("/upload")
 def upload():
     data = request.get_data()
-    syscalls = parse_request_data_to_syscalls(data)
+    syscalls = utils.parse_request_data_to_syscalls(data)
     syscallsgrouped = sg.group_syscalls(syscalls)
     print(syscallsgrouped.to_json())
 
     # TODO: Save file
-    # Compare to average, get score, move file to directory based on score
-    #
-    #
+    # Compare to average, calculate score
+
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    save_data(syscallsgrouped.to_json(), "syscallgroups", f"{timestamp}.json")
+    syscallsgrouped.name = timestamp
+    utils.save_data(syscallsgrouped.to_json(), "syscallgroups", f"{timestamp}.json")
 
     return "Thanks!"
 

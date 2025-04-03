@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>FlaskApp</title>
+  <meta charset="UTF-8">
+  <title>IDS Central 1337</title>
+  <link rel="stylesheet" href="/static/pico.pumpkin.min.css">
 </head>
+
 <body>
-    <h1>Hello World!</h1>
-    <h2>Welcome to FlaskApp!</h2>
+  <h1>Intrusion Detection System Central 1337</h1>
+  <h2>Hackers be warned!</h2>
+
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td>{{ syscallgroup.name }}</td>
+      </tr>
+      <tr>
+        <td>PIDs</td>
+        <td>{{ syscallgroup.pids}}</td>
+      </tr>
+      <tr>
+        <td>Syscalls</td>
+        <td>{{ syscallgroup.syscalls }}</td>
+      </tr>
+      <tr>
+        <td>Read</td>
+        <td>{{ syscallgroup.read}}</td>
+      </tr>
+      <tr>
+        <td>Write</td>
+        <td>{{ syscallgroup.write}}</td>
+      </tr>
+      <tr>
+        <td>Score</td>
+        <td>{{ syscallgroup.score }}</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
+
 </html>
