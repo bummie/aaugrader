@@ -12,6 +12,7 @@ class SyscallGroup:
         syscalls: dict[str, int] = {},
         read: dict[str, int] = {},
         write: dict[str, int] = {},
+        verified: bool = False,
         score: int = 0,
     ):
         self.name = name
@@ -19,6 +20,7 @@ class SyscallGroup:
         self.syscalls = syscalls
         self.read = read
         self.write = write
+        self.verified = verified
         self.score = score
 
     def to_json(self) -> str:
@@ -31,6 +33,7 @@ class SyscallGroup:
         self.syscalls = sg.get("syscalls", {})
         self.read = sg.get("read", {})
         self.write = sg.get("write", {})
+        self.verified = sg.get("verified", False)
         self.score = sg.get("score", 0)
 
     def calculate_malicious_score(self, base_group):

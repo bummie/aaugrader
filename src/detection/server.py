@@ -2,7 +2,7 @@ from datetime import datetime
 
 import utils
 import syscallgrouper as sg
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect
 
 app = Flask(__name__)
 
@@ -23,6 +23,25 @@ def view_event():
         return "<h1>Could not find syscallgroup!</h1>"
 
     return render_template("event.html", syscallgroup=syscallgroup)
+
+
+@app.route("/verify")
+def verify_event():
+    syscallgroup_name = request.args.get("name", "")
+    syscallgroup = utils.load_syscallgroup_from_name(syscallgroup_name)
+
+    if syscallgroup is None:
+        return "<h1>Could not find syscallgroup!</h1>"
+
+    try:
+        syscallgroup.verified = not syscallgroup.verified
+        utils.save_data(
+            syscallgroup.to_json(), "syscallgroups", f"{syscallgroup.name}.json"
+        )
+    except Exception as e:
+        return str(e)
+
+    return redirect("/", code=302)
 
 
 @app.post("/upload")

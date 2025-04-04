@@ -20,6 +20,7 @@
         <th>Read</th>
         <th>Write</th>
         <th>Score</th>
+        <th>Verification</th>
       </tr>
     </thead>
     <tbody>
@@ -31,9 +32,17 @@
           <td>{{ syscallgroup.read|length }}</td>
           <td>{{ syscallgroup.write|length }}</td>
           <td>{{ syscallgroup.score }}</td>
-        </tr>
+          <td><button onclick=" location.href='/verify?name={{syscallgroup.name}}'" type=button>
+          {% if syscallgroup.verified %}
+          De-Verify
+          {% else %}
+          Verify
+          {% endif %}
+          </button> </td>
+      </tr>
       {% endfor %}
     </tbody>
   </table>
 </body>
+
 </html>
