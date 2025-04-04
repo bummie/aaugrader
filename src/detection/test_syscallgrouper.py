@@ -243,8 +243,19 @@ def test_scoring():
     assert hg.score > 0
 
 
+def test_avg_syscallgroup_calculation():
+    hg = hacker_syscallgroup()
+    ng = normal_syscallgroup()
+    nug = normal_unknown_user_syscallgroup()    
+
+    syscallgroups = [ng, nug, hg]
+    
+    avg_syscallgroup = sg.calculate_average_syscallgroup(syscallgroups)
+
+    print(avg_syscallgroup.to_json())
+    
 if __name__ == "__main__":
     test_sum()
     test_scoring()
-
+    test_avg_syscallgroup_calculation()
     print("Everything passed")

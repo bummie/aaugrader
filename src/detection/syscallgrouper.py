@@ -1,4 +1,6 @@
 import json
+import math
+import operator
 from collections import defaultdict
 
 import syscallparser as sp
@@ -104,3 +106,42 @@ def group_syscalls(syscalls: list[sp.Syscall]) -> SyscallGroup:
         read=dict(read_files),
         write=dict(write_files),
     )
+
+
+def combine_dicts(a, b, op=operator.add):
+    return dict(list(a.items()) + list(b.items()) + [(k, op(a[k], b[k])) for k in set(b) & set(a)])
+
+
+def calculate_average_syscallgroup(syscallgroups: list[SyscallGroup]) -> SyscallGroup:
+    avg_syscallgroup = None
+
+    for syscallgroup in syscallgroups:
+        if avg_syscallgroup is None:
+            avg_syscallgroup = syscallgroup
+            continue
+
+        avg_syscallgroup.pids += syscallgroup.pids
+        avg_syscallgroup.syscalls = combine_dicts(
+            avg_syscallgroup.syscalls, syscallgroup.syscalls
+        )
+        avg_syscallgroup.read = combine_dicts(avg_syscallgroup.read, syscallgroup.read)
+        avg_syscallgroup.write = combine_dicts(
+            avg_syscallgroup.write, syscallgroup.write
+        )
+
+    avg_syscallgroup.pids = math.ceil(avg_syscallgroup.pids / len(syscallgroups))
+
+    for key in avg_syscallgroup.syscalls:
+        avg_syscallgroup.syscalls[key] = math.ceil(
+            avg_syscallgroup.syscalls[key] / len(syscallgroups)
+        )
+    for key in avg_syscallgroup.read:
+        avg_syscallgroup.read[key] = math.ceil(
+            avg_syscallgroup.read[key] / len(syscallgroups)
+        )
+    for key in avg_syscallgroup.write:
+        avg_syscallgroup.write[key] = math.ceil(
+            avg_syscallgroup.write[key] / len(syscallgroups)
+        )
+
+    return avg_syscallgroup
