@@ -7,6 +7,8 @@ import syscallgrouper as sg
 
 def syscallgroupFolder() -> str:
     return "syscallgroups"
+
+
 def parse_request_data_to_syscalls(data) -> list[sp.Syscall]:
     syscalls: list[sp.Syscall] = []
 
@@ -40,7 +42,7 @@ def load_syscallgroup_from_name(name: str) -> sg.SyscallGroup:
     except Exception as e:
         print("Could not load directory " + str(e))
         return None
-    
+
     return syscallGroup
 
 
@@ -67,6 +69,20 @@ def save_data(data: str, folder: str, filename: str):
 
     print(f"Data saved at file saved at: {file_path}")
 
+
+def update_scoring():
+    all_syscall_groups = load_syscallgroups_from_path(syscallgroupFolder())
+    verified_syscall_groups = [syscallgroup for syscallgroup in all_syscall_groups if syscallgroup.verified]
+
+    avg_syscall_group = sg.calculate_average_syscallgroup(verified_syscall_groups)
+
+    for syscallgroup in all_syscall_groups:
+        syscallgroup.calculate_malicious_score(avg_syscall_group)
+
+        save_data(syscallgroup.to_json(), syscallgroupFolder(), f"{syscallgroup.name}.json")
+    
+
+    
 # TODO:
 # Load all syscalls, group them if they are verified or not
 # Create avg_syscallgroup from the verified ones.

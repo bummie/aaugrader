@@ -36,11 +36,14 @@ def verify_event():
     try:
         syscallgroup.verified = not syscallgroup.verified
         utils.save_data(
-            syscallgroup.to_json(), utils.syscallgroupFolder(), f"{syscallgroup.name}.json"
+            syscallgroup.to_json(),
+            utils.syscallgroupFolder(),
+            f"{syscallgroup.name}.json",
         )
     except Exception as e:
         return str(e)
 
+    utils.update_scoring()
     return redirect("/", code=302)
 
 
@@ -51,13 +54,13 @@ def upload():
     syscallsgrouped = sg.group_syscalls(syscalls)
     print(syscallsgrouped.to_json())
 
-    # TODO: Save file
-    # Compare to average, calculate score
-
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     syscallsgrouped.name = timestamp
-    utils.save_data(syscallsgrouped.to_json(), utils.syscallgroupFolder(), f"{timestamp}.json")
+    utils.save_data(
+        syscallsgrouped.to_json(), utils.syscallgroupFolder(), f"{timestamp}.json"
+    )
 
+    utils.update_scoring()
     return "Thanks!"
 
 

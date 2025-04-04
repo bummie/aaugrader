@@ -41,6 +41,9 @@ class SyscallGroup:
     def calculate_malicious_score(self, base_group):
         # TODO: return reasons for score given
 
+        if base_group is None:
+            return
+        
         # Score multipliers
         multiplier_new_syscall = 10
         multiplier_new_file_write = 10
@@ -129,6 +132,9 @@ def calculate_average_syscallgroup(syscallgroups: list[SyscallGroup]) -> Syscall
             avg_syscallgroup.write, syscallgroup.write
         )
 
+    if avg_syscallgroup is None:
+        return None
+    
     avg_syscallgroup.pids = math.ceil(avg_syscallgroup.pids / len(syscallgroups))
 
     for key in avg_syscallgroup.syscalls:
