@@ -52,7 +52,6 @@ def upload():
     data = request.get_data()
     syscalls = utils.parse_request_data_to_syscalls(data)
     syscallsgrouped = sg.group_syscalls(syscalls)
-    print(syscallsgrouped.to_json())
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     syscallsgrouped.name = timestamp
