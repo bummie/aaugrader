@@ -5,6 +5,8 @@ import syscallparser as sp
 import syscallgrouper as sg
 
 
+def syscallgroupFolder() -> str:
+    return "syscallgroups"
 def parse_request_data_to_syscalls(data) -> list[sp.Syscall]:
     syscalls: list[sp.Syscall] = []
 
@@ -64,3 +66,8 @@ def save_data(data: str, folder: str, filename: str):
         file.write(data)
 
     print(f"Data saved at file saved at: {file_path}")
+
+# TODO:
+# Load all syscalls, group them if they are verified or not
+# Create avg_syscallgroup from the verified ones.
+# Use the average to calculate a score for all the files

@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def main_page():
-    syscall_groups = utils.load_syscallgroups_from_path("syscallgroups")
+    syscall_groups = utils.load_syscallgroups_from_path(utils.syscallgroupFolder())
 
     return render_template("index.html", syscallgroups=syscall_groups)
 
@@ -36,7 +36,7 @@ def verify_event():
     try:
         syscallgroup.verified = not syscallgroup.verified
         utils.save_data(
-            syscallgroup.to_json(), "syscallgroups", f"{syscallgroup.name}.json"
+            syscallgroup.to_json(), utils.syscallgroupFolder(), f"{syscallgroup.name}.json"
         )
     except Exception as e:
         return str(e)
@@ -56,7 +56,7 @@ def upload():
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     syscallsgrouped.name = timestamp
-    utils.save_data(syscallsgrouped.to_json(), "syscallgroups", f"{timestamp}.json")
+    utils.save_data(syscallsgrouped.to_json(), utils.syscallgroupFolder(), f"{timestamp}.json")
 
     return "Thanks!"
 
