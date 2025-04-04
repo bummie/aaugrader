@@ -1,0 +1,15 @@
+services:
+
+  aaugrader:
+    build: ./src/binary/
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
+        
+  ids:
+    build: ./src/detection/
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
