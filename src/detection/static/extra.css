@@ -1,0 +1,13 @@
+@keyframes changeColor {
+    from {
+        background-color: #ff7575;
+    }
+
+    to {
+        background-color: #ff2525;
+    }
+}
+
+.hacker {
+    animation: changeColor 1s infinite alternate;
+}

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>IDS Central 1337</title>
   <link rel="stylesheet" href="/static/pico.pumpkin.min.css">
+  <link rel="stylesheet" href="/static/extra.css">
 </head>
 
 <body>
@@ -31,7 +32,7 @@
           <td>{{ syscallgroup.syscalls|length }}</td>
           <td>{{ syscallgroup.read|length }}</td>
           <td>{{ syscallgroup.write|length }}</td>
-          <td>{{ syscallgroup.score }}</td>
+          <td {% if syscallgroup.score|int > 250 %}class="hacker"{% endif %}>{{ syscallgroup.score }}</td>
           <td><button onclick=" location.href='/verify?name={{syscallgroup.name}}'" type=button>
           {% if syscallgroup.verified %}
           De-Verify
