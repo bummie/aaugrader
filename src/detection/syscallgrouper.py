@@ -46,20 +46,25 @@ class SyscallGroup:
         
         # Score multipliers
         multiplier_new_syscall = 10
-        multiplier_new_file_write = 10
-        multiplier_new_file_read = 10
+        multiplier_pid = 10
+        multiplier_new_file_write = 1
+        multiplier_new_file_read = 1
 
         score = 0
 
         # One point for each different extra PID
         pid_difference = self.pids - base_group.pids
         if pid_difference > 0:
-            score += pid_difference
+            score += pid_difference * multiplier_pid
 
         # Check if the group we are testing has more syscall than base
         for key in self.syscalls.keys():
             if key not in base_group.syscalls:
                 score += 1 * multiplier_new_syscall
+            else:
+                syscall_amount_diff = self.syscalls[key] - base_group.syscalls[key]
+                if syscall_amount_diff > 0:
+                    score += syscall_amount_diff
 
         # TODO: Check difference in amount of readings and writings? Compare
         for key in self.read.keys():
@@ -120,17 +125,17 @@ def calculate_average_syscallgroup(syscallgroups: list[SyscallGroup]) -> Syscall
 
     for syscallgroup in syscallgroups:
         if avg_syscallgroup is None:
-            avg_syscallgroup = syscallgroup
+            avg_syscallgroup = SyscallGroup(
+                pids=syscallgroup.pids, 
+                syscalls=syscallgroup.syscalls.copy(),
+                read=syscallgroup.read.copy(),
+                write=syscallgroup.write.copy())
             continue
 
         avg_syscallgroup.pids += syscallgroup.pids
-        avg_syscallgroup.syscalls = combine_dicts(
-            avg_syscallgroup.syscalls, syscallgroup.syscalls
-        )
+        avg_syscallgroup.syscalls = combine_dicts(avg_syscallgroup.syscalls, syscallgroup.syscalls)
         avg_syscallgroup.read = combine_dicts(avg_syscallgroup.read, syscallgroup.read)
-        avg_syscallgroup.write = combine_dicts(
-            avg_syscallgroup.write, syscallgroup.write
-        )
+        avg_syscallgroup.write = combine_dicts(avg_syscallgroup.write, syscallgroup.write)
 
     if avg_syscallgroup is None:
         return None
@@ -138,16 +143,13 @@ def calculate_average_syscallgroup(syscallgroups: list[SyscallGroup]) -> Syscall
     avg_syscallgroup.pids = math.ceil(avg_syscallgroup.pids / len(syscallgroups))
 
     for key in avg_syscallgroup.syscalls:
-        avg_syscallgroup.syscalls[key] = math.ceil(
-            avg_syscallgroup.syscalls[key] / len(syscallgroups)
-        )
+        avg_syscallgroup.syscalls[key] = math.ceil(avg_syscallgroup.syscalls[key] / len(syscallgroups))
     for key in avg_syscallgroup.read:
-        avg_syscallgroup.read[key] = math.ceil(
-            avg_syscallgroup.read[key] / len(syscallgroups)
-        )
+        avg_syscallgroup.read[key] = math.ceil(avg_syscallgroup.read[key] / len(syscallgroups))
     for key in avg_syscallgroup.write:
-        avg_syscallgroup.write[key] = math.ceil(
-            avg_syscallgroup.write[key] / len(syscallgroups)
-        )
+        avg_syscallgroup.write[key] = math.ceil(avg_syscallgroup.write[key] / len(syscallgroups))
+
+    avg_syscallgroup.name = "average"
+    avg_syscallgroup.score = 0
 
     return avg_syscallgroup

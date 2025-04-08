@@ -33,7 +33,6 @@ def parse_strace_output(input_line: str) -> Syscall:
     matches = None
     if input_line.lower().lstrip().startswith("[pid") or input_line.lower().lstrip().startswith("b'[pid"):
         pid = int(input_line.split("[pid ")[1].split("]")[0])
-        print(str(pid))
         strace_output_no_pid = "".join(input_line.split("]")[1:])
         matches = regex_match_syscall(strace_output_no_pid)
     elif input_line.lower().startswith("<..."):

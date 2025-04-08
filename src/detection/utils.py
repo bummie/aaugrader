@@ -19,7 +19,7 @@ def parse_request_data_to_syscalls(data) -> list[sp.Syscall]:
             syscall = sp.parse_strace_output(str(line))
             syscalls.append(syscall)
         except Exception as err:
-            # print(f"failed parsing line: {str(err)}\n{line}", file=sys.stderr)
+            #   print(f"failed parsing line: {str(err)}\n{line}", file=sys.stderr)
             continue
 
     return syscalls
@@ -73,21 +73,13 @@ def save_data(data: str, folder: str, filename: str):
 
 def update_scoring():
     all_syscall_groups = load_syscallgroups_from_path(syscallgroupFolder())
-    verified_syscall_groups = [
-        syscallgroup for syscallgroup in all_syscall_groups if syscallgroup.verified
-    ]
+    verified_syscall_groups = [syscallgroup for syscallgroup in all_syscall_groups if syscallgroup.verified]
 
     avg_syscall_group = sg.calculate_average_syscallgroup(verified_syscall_groups)
 
-    for syscallgroup in all_syscall_groups:
-        syscallgroup.calculate_malicious_score(avg_syscall_group)
+    if avg_syscall_group is None:
+        return
 
-        save_data(
-            syscallgroup.to_json(), syscallgroupFolder(), f"{syscallgroup.name}.json"
-        )
-
-
-# TODO:
-# Load all syscalls, group them if they are verified or not
-# Create avg_syscallgroup from the verified ones.
-# Use the average to calculate a score for all the files
+    for sysgroup in all_syscall_groups:
+        sysgroup.calculate_malicious_score(avg_syscall_group)
+        save_data(sysgroup.to_json(), syscallgroupFolder(), f"{sysgroup.name}.json")
