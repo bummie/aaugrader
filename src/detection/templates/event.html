@@ -29,15 +29,54 @@
       </tr>
       <tr>
         <td>Syscalls</td>
-        <td>{{ syscallgroup.syscalls }}</td>
+        <td>
+          <table id="data" class="table striped">
+            <tr>
+              <td>Syscall</td>
+              <td>Count</td>
+            </tr>
+            {% for key, value in syscallgroup.syscalls.items() %}
+            <tr>
+              <td>{{ key }}</td>
+              <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </td>
       </tr>
       <tr>
         <td>Read</td>
-        <td>{{ syscallgroup.read }}</td>
+        <td>
+          <table id="data" class="table striped">
+            <tr>
+              <td>File</td>
+              <td>Count</td>
+            </tr>
+            {% for key, value in syscallgroup.read.items() %}
+            <tr>
+              <td>{{ key }}</td>
+              <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </td>
       </tr>
       <tr>
         <td>Write</td>
-        <td>{{ syscallgroup.write }}</td>
+        <td>
+          <table id="data" class="table striped">
+            <tr>
+              <td>File</td>
+              <td>Count</td>
+            </tr>
+            {% for key, value in syscallgroup.write.items() %}
+            <tr>
+              <td>{{ key }}</td>
+              <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </td>
       </tr>
       <tr>
         <td>Score</td>
