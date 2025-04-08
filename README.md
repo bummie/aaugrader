@@ -99,6 +99,8 @@ sberge24:02;02;04;07;12
 ```
 
 ## Run exploits
+Demo video: https://asciinema.org/a/HXxDZxsyPVmJ0jY3PsEc6kbLE
+
 ### Examples
 
 ```sh

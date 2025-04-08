@@ -1,4 +1,6 @@
+syscallgroups/
 .gdb_history
+__pycache__
 a.out
 aaugrader*
 .vscode

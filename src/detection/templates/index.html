@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>IDS Central 1337</title>
+  <link rel="stylesheet" href="/static/pico.pumpkin.min.css">
+</head>
+
+<body>
+  <h1>Intrusion Detection System Central 1337</h1>
+  <h2>Hackers be warned!</h2>
+
+  <table id="data" class="table striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>PIDS</th>
+        <th>Syscalls</th>
+        <th>Read</th>
+        <th>Write</th>
+        <th>Score</th>
+        <th>Verification</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for syscallgroup in syscallgroups %}
+      <tr>
+        <td><a href="/event?name={{syscallgroup.name}}"">{{ syscallgroup.name }}</a></td>
+          <td>{{ syscallgroup.pids}}</td>
+          <td>{{ syscallgroup.syscalls|length }}</td>
+          <td>{{ syscallgroup.read|length }}</td>
+          <td>{{ syscallgroup.write|length }}</td>
+          <td>{{ syscallgroup.score }}</td>
+          <td><button onclick=" location.href='/verify?name={{syscallgroup.name}}'" type=button>
+          {% if syscallgroup.verified %}
+          De-Verify
+          {% else %}
+          Verify
+          {% endif %}
+          </button> </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+
+</html>
