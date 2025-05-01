@@ -5,7 +5,7 @@ ARG BINARY_NAME="aaugrader"
 RUN dpkg --add-architecture i386
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y socat libstdc++6:i386 libc6 strace curl
+RUN apt-get install -y socat libstdc++6:i386 libc6 strace curl binutils
 
 RUN useradd -ms /bin/sh jens
 
