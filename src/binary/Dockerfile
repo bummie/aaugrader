@@ -1,5 +1,7 @@
 FROM ubuntu:24.04
 
+ARG BINARY_NAME="aaugrader"
+
 RUN dpkg --add-architecture i386
 
 RUN apt-get update && apt-get upgrade -y
@@ -10,7 +12,7 @@ RUN useradd -ms /bin/sh jens
 WORKDIR /home/jens
 
 COPY ./grades.txt ./
-COPY ./aaugrader ./
+COPY ./${BINARY_NAME} ./aaugrader
 COPY ./run.sh ./
 COPY ./aaugrader.sh ./
 

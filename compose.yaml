@@ -1,11 +1,24 @@
 services:
 
   aaugrader:
-    build: ./src/binary/
+    build: 
+      context: ./src/binary/
+      args:
+        - BINARY_NAME=aaugrader
     ports:
       - "8000:8000"
     expose:
       - "8000"
+      
+  aaugrader_rop:
+    build: 
+      context: ./src/binary/
+      args:
+        - BINARY_NAME=aaugrader_rop
+    ports:
+      - "8001:8000"
+    expose:
+      - "8001"
         
   ids:
     build: ./src/detection/
