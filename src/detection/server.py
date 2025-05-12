@@ -7,10 +7,18 @@ from flask import Flask, request, render_template, redirect
 app = Flask(__name__)
 
 
+def sort_syscallgroups(syscallgroup):
+
+    try:
+        dt = datetime.strptime(syscallgroup.name, "%Y-%m-%d_%H-%M-%S")
+        return int(dt.timestamp())
+    except ValueError:
+        return 0
+
 @app.route("/")
 def main_page():
     syscall_groups = utils.load_syscallgroups_from_path(utils.syscallgroupFolder())
-    sorted_sycalls = sorted(syscall_groups, key=lambda x: x.name, reverse=True)
+    sorted_sycalls = sorted(syscall_groups, key=sort_syscallgroups, reverse=True)
     return render_template("index.html", syscallgroups=sorted_sycalls)
 
 
