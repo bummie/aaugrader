@@ -3,6 +3,7 @@ services:
   aaugrader:
     build: 
       context: ./src/binary/
+      network: host
       args:
         - BINARY_NAME=aaugrader
     ports:
@@ -13,6 +14,7 @@ services:
   aaugrader_rop:
     build: 
       context: ./src/binary/
+      network: host
       args:
         - BINARY_NAME=aaugrader_rop
     ports:
