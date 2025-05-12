@@ -10,8 +10,8 @@ app = Flask(__name__)
 @app.route("/")
 def main_page():
     syscall_groups = utils.load_syscallgroups_from_path(utils.syscallgroupFolder())
-
-    return render_template("index.html", syscallgroups=syscall_groups)
+    sorted_sycalls = sorted(syscall_groups, key=lambda x: x.name, reverse=True)
+    return render_template("index.html", syscallgroups=sorted_sycalls)
 
 
 @app.route("/event")
