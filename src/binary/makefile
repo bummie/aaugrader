@@ -1,4 +1,4 @@
-all: pwn pwnrop
+all: pwn pwnrop pwn_cfg pwnrop_cfg
 
 pwn:
 	gcc ./main.c -m32 -o aaugrader -z execstack -Wimplicit-function-declaration
