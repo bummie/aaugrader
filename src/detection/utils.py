@@ -9,6 +9,9 @@ import syscallparser as sp
 def syscallgroupFolder() -> str:
     return "syscallgroups"
 
+def cfgFolder() -> str:
+    return "collectedcfg"
+
 
 def parse_request_data_to_syscalls(data) -> list[sp.Syscall]:
     syscalls: list[sp.Syscall] = []

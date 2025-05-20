@@ -6,6 +6,7 @@ services:
       network: host
       args:
         - BINARY_NAME=aaugrader
+        - RUN_SCRIPT=aaugrader.sh
     ports:
       - "8000:8000"
     expose:
@@ -17,10 +18,35 @@ services:
       network: host
       args:
         - BINARY_NAME=aaugrader_rop
+        - RUN_SCRIPT=aaugrader.sh
     ports:
       - "8001:8000"
     expose:
       - "8001"
+
+  aaugrader_cfg:
+    build: 
+      context: ./src/binary/
+      network: host
+      args:
+        - BINARY_NAME=aaugrader_cfg
+        - RUN_SCRIPT=aaugrader_cfg.sh
+    ports:
+      - "8002:8000"
+    expose:
+      - "8002"
+
+  aaugrader_rop_cfg:
+    build: 
+      context: ./src/binary/
+      network: host
+      args:
+        - BINARY_NAME=aaugrader_rop_cfg
+        - RUN_SCRIPT=aaugrader_cfg.sh
+    ports:
+      - "8003:8000"
+    expose:
+      - "8003"
         
   ids:
     build: ./src/detection/

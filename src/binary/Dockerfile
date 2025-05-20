@@ -1,6 +1,7 @@
 FROM ubuntu:24.04
 
 ARG BINARY_NAME="aaugrader"
+ARG RUN_SCRIPT="aaugrader.sh"
 
 RUN dpkg --add-architecture i386
 
@@ -14,7 +15,7 @@ WORKDIR /home/jens
 COPY ./grades.txt ./
 COPY ./${BINARY_NAME} ./aaugrader
 COPY ./run.sh ./
-COPY ./aaugrader.sh ./
+COPY ./${RUN_SCRIPT} ./aaugrader.sh
 
 RUN chown -R jens:jens /home/jens && \
     chmod 750 /home/jens && \

@@ -1,19 +1,20 @@
 from datetime import datetime
-
+import os 
 import utils
 import syscallgrouper as sg
+import validate_trace as vs
 from flask import Flask, request, render_template, redirect
 
 app = Flask(__name__)
 
 
 def sort_syscallgroups(syscallgroup):
-
     try:
         dt = datetime.strptime(syscallgroup.name, "%Y-%m-%d_%H-%M-%S")
         return int(dt.timestamp())
     except ValueError:
         return 0
+
 
 @app.route("/")
 def main_page():
@@ -69,6 +70,31 @@ def upload():
 
     utils.update_scoring()
     return "Thanks!"
+
+
+@app.post("/uploadcfg")
+def upload_cfg():
+    data = request.get_data().decode("UTF-8")
+    file_name = f"{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.cfg"
+    file_path = os.path.join(utils.cfgFolder(), file_name)
+
+    if not os.path.exists(utils.cfgFolder()):
+        os.makedirs(utils.cfgFolder())
+    
+    with open(file_path, "w") as file:
+        file.write(data)
+
+    return "Thanks!"
+
+
+@app.route("/cfg")
+def cfg_events():
+
+    files = utils.list_files(utils.cfgFolder())
+    traces = vs.validate_multiple_cfgs(files)
+    
+    sorted_traces = traces #sorted(traces, key=sort_syscallgroups, reverse=True)
+    return render_template("cfg.html", traces=sorted_traces)
 
 
 if __name__ == "__main__":

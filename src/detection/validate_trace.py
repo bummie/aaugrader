@@ -36,7 +36,7 @@ def validate_multiple_cfgs(files: list[str]):
             trace = [line.strip() for line in f.readlines() if line.strip()]
 
         ok, h = is_trusted(trace, trusted)
-        traces.append({"name": path.stem, "trusted": trusted, "trace": trace})
+        traces.append({"name": path.stem, "trusted": ok, "trace": trace})
 
     return traces
 
@@ -66,3 +66,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
