@@ -1,5 +1,5 @@
 from datetime import datetime
-import os 
+import os
 import utils
 import syscallgrouper as sg
 import validate_trace as vs
@@ -18,9 +18,14 @@ def sort_syscallgroups(syscallgroup):
 
 @app.route("/")
 def main_page():
+    return render_template("index.html")
+
+
+@app.route("/syscalls")
+def syscalls_page():
     syscall_groups = utils.load_syscallgroups_from_path(utils.syscallgroupFolder())
     sorted_sycalls = sorted(syscall_groups, key=sort_syscallgroups, reverse=True)
-    return render_template("index.html", syscallgroups=sorted_sycalls)
+    return render_template("syscalls.html", syscallgroups=sorted_sycalls)
 
 
 @app.route("/event")
@@ -75,12 +80,12 @@ def upload():
 @app.post("/uploadcfg")
 def upload_cfg():
     data = request.get_data().decode("UTF-8")
-    file_name = f"{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.cfg"
+    file_name = f"{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.cfg"
     file_path = os.path.join(utils.cfgFolder(), file_name)
 
     if not os.path.exists(utils.cfgFolder()):
         os.makedirs(utils.cfgFolder())
-    
+
     with open(file_path, "w") as file:
         file.write(data)
 
@@ -89,11 +94,10 @@ def upload_cfg():
 
 @app.route("/cfg")
 def cfg_events():
-
     files = utils.list_files(utils.cfgFolder())
     traces = vs.validate_multiple_cfgs(files)
-    
-    sorted_traces = traces #sorted(traces, key=sort_syscallgroups, reverse=True)
+
+    sorted_traces = traces  # sorted(traces, key=sort_syscallgroups, reverse=True)
     return render_template("cfg.html", traces=sorted_traces)
 
 
