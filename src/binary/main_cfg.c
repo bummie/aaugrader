@@ -7,10 +7,8 @@ void on_exit_handler() {
     fprintf(stderr, "%s\n", "EXIT_OK");
 }
 
-
-
 char *getUsername() {
-   fprintf(stderr, "%s", "getUsername\n");
+   fprintf(stderr, "%s\n", "getUsername");
 
     printf("Semester: ");
     char semester[10];
@@ -32,7 +30,7 @@ char *getUsername() {
 }
 
 void printGrades(char *username, char *input) {
-    fprintf(stderr, "%s", "printGrades\n");
+    fprintf(stderr, "%s\n", "printGrades");
 
     char *copy = strdup(input);
     if (copy == NULL) exit(1);
@@ -50,7 +48,7 @@ void printGrades(char *username, char *input) {
 }
 
 bool findUser(char *username, char *input) {
-    fprintf(stderr, "%s", "findUser\n");
+    fprintf(stderr, "%s\n", "findUser");
 
     char *copy = strdup(input);
     if (copy == NULL) exit(1);
