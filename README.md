@@ -1,16 +1,61 @@
 # AAU Grader
 
-The idea is to make a small example binary vulnerable to buffer overflows.
-The binary takes a username as input and returns the grades for that student.
+This project contains a binary, two exploit techniques and detection systems.
 
-Make the binary vulnerable to buffer overflows when providing username.
 
-Hackers can manipulate the grading file.
+## Docker Compose Setup
 
-One version where we can provide our own payload, and one
-that is only hackable using ROP as a technique.
+```sh
+# Download docker compose v2
 
-## Building and executing
+# Start containers
+docker compose up
+```
+
+### System call detection system
+System call based detection system will be available at http://localhost:8080/
+
+
+### Executable Stack binary
+```sh
+nc localhost 8000
+```
+
+### Non-executable stack binary
+```sh
+nc localhost 8001
+```
+
+## Run exploits
+
+### Setup python
+```sh
+# Change directory to root of project
+cd AAUGRADER
+
+# Create a virtual python environment
+python3 -m venv venv
+
+# Activate virtual environment
+. venv/bin/activate
+# Or if using fish
+. venv/bin/activate.fish
+
+# Install dependencies
+pip3 install -r requirements.txt
+
+```
+### Executable Stack exploit
+```sh
+python3 src/exploits/exploit.py -s localhost -p 8000
+```
+
+### Non-Executable Stack exploit
+```sh
+python3 src/exploits/rop_exploit.py -s localhost -p 8001 -b src/binary/aaugrader_rop
+```
+
+## Building and executing manually
 
 * Disable stack canary `-fno-stack-protector`
 * Make stack executable `-z execstack`
@@ -53,10 +98,6 @@ docker exec -it aaugrader bash
 
 ### Connect to container
 
-#### Remote
-```sh
-nc aaugrader.bevster.net 8000
-```
 #### Local
 ```sh
 nc localhost 8000
@@ -74,10 +115,6 @@ Username: sberge24
 	07
 	12
 ```
-
-## Todo
-- [X] Make a docker container
-- [X] Read file content using `/bin/sh` so it can be used with ROP
 
 ## Format
 
@@ -108,9 +145,9 @@ Demo video: https://asciinema.org/a/HXxDZxsyPVmJ0jY3PsEc6kbLE
 ```
 
 ```sh
-./exploits/exploit.py -s aaugrader.bevster.net -p 8000
+./exploits/exploit.py -s localhost -p 8000
 
-[+] Opening connection to aaugrader.bevster.net on port 8000: Done
+[+] Opening connection to localhost on port 8000: Done
 [*] Switching to interactive mode
 Username is too long!
 $ ls
