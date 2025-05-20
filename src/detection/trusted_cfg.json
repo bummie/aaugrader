@@ -23,6 +23,20 @@
       "findUser",
       "findUser",
       "findUser",
+      "findUser",
+      "EXIT_OK"
+    ],
+    "final_hash": "d513683c5f34b389fb2591c49d6cc6ef45b167325fd4e1239d360478cb7b02ef"
+  },
+  {
+    "path": [
+      "main",
+      "getUsername",
+      "retrieveGrades",
+      "findUser",
+      "findUser",
+      "findUser",
+      "findUser",
       "printGrades",
       "EXIT_OK"
     ],
