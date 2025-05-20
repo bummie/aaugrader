@@ -3,30 +3,33 @@
 #include <stdlib.h>
 #include <string.h>
 
+void on_exit_handler() { fprintf(stderr, "%s\n", "EXIT_OK"); }
+
 char *getUsername() {
+  fprintf(stderr, "%s\n", "getUsername");
 
   printf("Semester: "); 
   char semester[10];
   scanf("%s", semester);
   printf(semester);
-  
-  printf("\nUsername: "); 
-  // Very weird code to make it easier to exploit.
+
+  printf("\nUsername: ");
   char username[80];
   scanf("%s", username);
 
-  if(strlen(username) > 10) {
+  if (strlen(username) > 10) {
     printf("Username is too long!\n");
     return "bad_username";
   }
-  
+
   char *heapUsername = malloc(10);
   strncpy(heapUsername, username, strlen(username) + 1);
   return heapUsername;
 }
 
-// output the grades for specified user
 void printGrades(char *username, char *input) {
+  fprintf(stderr, "%s\n", "printGrades");
+
   char *copy = strdup(input);
   if (copy == NULL) {
     exit(1);
@@ -44,8 +47,9 @@ void printGrades(char *username, char *input) {
   free(copy);
 }
 
-// look for specified username in input
 bool findUser(char *username, char *input) {
+  fprintf(stderr, "%s\n", "findUser");
+
   char *copy = strdup(input);
   if (copy == NULL) {
     exit(1);
@@ -57,7 +61,6 @@ bool findUser(char *username, char *input) {
       free(copy);
       return true;
     }
-
     token = strtok(NULL, ":");
   }
 
@@ -65,9 +68,9 @@ bool findUser(char *username, char *input) {
   return false;
 }
 
-// Takes username as input
-// Reads users grades from grades.txt
 void retrieveGrades(char *username) {
+  fprintf(stderr, "%s\n", "retrieveGrades");
+
   FILE *fp;
   char gradesLine[100];
 
@@ -88,7 +91,6 @@ void retrieveGrades(char *username) {
     if (!findUser(username, gradesLine)) {
       continue;
     }
-
     printGrades(username, gradesLine);
     userFound = true;
   }
@@ -101,6 +103,9 @@ void retrieveGrades(char *username) {
 }
 
 int main(int argc, char *argv[]) {
+  fprintf(stderr, "%s\n", "main");
+  atexit(on_exit_handler);
+
   setvbuf(stdout, NULL, _IONBF, 0);
   setvbuf(stdin, NULL, _IONBF, 0);
   setvbuf(stderr, NULL, _IONBF, 0);
@@ -113,8 +118,9 @@ int main(int argc, char *argv[]) {
   printf("(C) 2025                                         \n");
 
   printf("This program returns the grades for the specified user.\n");
-  char *username = getUsername();
 
+  char *username = getUsername();
   retrieveGrades(username);
+
   return 0;
 }
