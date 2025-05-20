@@ -58,7 +58,7 @@ def verify_event():
         return str(e)
 
     utils.update_scoring()
-    return redirect("/", code=302)
+    return redirect("/syscalls", code=302)
 
 
 @app.post("/upload")
